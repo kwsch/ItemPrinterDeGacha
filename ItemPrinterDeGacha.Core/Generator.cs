@@ -138,9 +138,9 @@ public static class Generator
     public static ulong FindNextBall(ulong startTicks, ushort itemId) => FindNextItem(startTicks, itemId, PrintMode.BallBonus);
     public static ulong FindNextItemBonus(ulong startTicks, ushort itemId) => FindNextItem(startTicks, itemId, PrintMode.ItemBonus);
 
-    public static (ulong Ticks, int Count) MaxResultsBall(ushort itemId, ulong start, ulong end)
+    public static (ulong Ticks, int Count) MaxResults(ushort itemId, ulong start, ulong end, PrintMode mode)
     {
-        if (!TableHasItem(PrintMode.BallBonus, itemId))
+        if (!TableHasItem(mode, itemId))
             throw new ArgumentException("Item ID not found in the table", nameof(itemId));
 
         ulong result = 0;
@@ -150,7 +150,7 @@ public static class Generator
         Span<Item> items = stackalloc Item[10];
         for (ulong i = start; i <= end; i++)
         {
-            _ = Generate(i, items, PrintMode.BallBonus);
+            _ = Generate(i, items, mode);
             int c = 0;
             foreach (var item in items)
             {
@@ -163,6 +163,33 @@ public static class Generator
 
             count = c;
             result = i;
+        }
+        return (result, count);
+    }
+
+    public static (ulong Ticks, int Count) MaxResultsAny(ulong start, ulong end, Span<Item> best, params int[] find)
+    {
+        ulong result = 0;
+        int count = -1;
+
+        // Just run on a single thread for now.
+        Span<Item> items = stackalloc Item[10];
+        for (ulong i = start; i <= end; i++)
+        {
+            _ = Generate(i, items, PrintMode.BallBonus);
+            int c = 0;
+            foreach (var item in items)
+            {
+                if (find.Contains(item.ItemId))
+                    c++;
+            }
+
+            if (c <= count)
+                continue;
+
+            count = c;
+            result = i;
+            items.CopyTo(best);
         }
         return (result, count);
     }

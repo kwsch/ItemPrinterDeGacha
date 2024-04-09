@@ -67,47 +67,50 @@ public partial class Main : Form
         var mode = (PrintMode)CB_Mode.SelectedIndex;
         if (mode == PrintMode.Regular)
         {
-            var targetMode = (PrintMode)(CB_TargetMode.SelectedIndex + 1);
-            ulong result;
-            DateTime time;
+            if (CB_Seek.SelectedIndex == 1) // Maximize specific item
             {
-                var start = ticks;
-                while (true)
-                {
-                    result = Generator.FindNextBonusMode(start, targetMode, itemId);
-                    time = TimeUtil.GetDateTime(result);
-                    if (IsGoodSeconds(time.Second)) // quick enough after a time change but not too quick.
-                        break;
-                    start = result + 1;
-                }
+                var (result, count) = Generator.MaxResults(itemId, ticks, ticks + SecondsToSearch, mode);
+                return
+                    $"Next target for {ItemNames.Names[itemId]} ({itemId}): {TimeUtil.GetDateTime(result)}{Environment.NewLine}" +
+                    $"Delay: {result - ticks} seconds ({(float)(result - ticks) / 60:F2}){Environment.NewLine}" +
+                    $"Time: {result}{Environment.NewLine}" +
+                    $"Count: {count}";
             }
-            return
-                $"Next {targetMode} mode: {time}{(itemId != 0 ? $" w/ {ItemNames.Names[itemId]}" : "")}{Environment.NewLine}" +
-                $"Delay: {result - ticks} seconds ({(float)(result - ticks) / 60:F2}){Environment.NewLine}" +
-                $"Time: {result}";
+            else
+            {
+                var targetMode = (PrintMode)(CB_TargetMode.SelectedIndex + 1);
+                ulong result;
+                DateTime time;
+                {
+                    var start = ticks;
+                    while (true)
+                    {
+                        result = Generator.FindNextBonusMode(start, targetMode, itemId);
+                        time = TimeUtil.GetDateTime(result);
+                        if (IsGoodSeconds(time.Second)) // quick enough after a time change but not too quick.
+                            break;
+                        start = result + 1;
+                    }
+                }
+                return
+                    $"Next {targetMode} mode: {time}{(itemId != 0 ? $" w/ {ItemNames.Names[itemId]}" : "")}{Environment.NewLine}" +
+                    $"Delay: {result - ticks} seconds ({(float)(result - ticks) / 60:F2}){Environment.NewLine}" +
+                    $"Time: {result}";
+            }
         }
 
-        if (mode == PrintMode.ItemBonus)
+        if (CB_Seek.SelectedIndex == 0) // Specific item (use 1)
         {
-            var result = Generator.FindNextItemBonus(ticks, itemId);
+            var result = Generator.FindNextItem(ticks, itemId, mode);
             return
                 $"Next target for {ItemNames.Names[itemId]} ({itemId}): {TimeUtil.GetDateTime(result)}{Environment.NewLine}" +
                 $"Delay: {result - ticks} seconds ({(float)(result - ticks) / 60:F2}){Environment.NewLine}" +
                 $"Time: {result}";
         }
 
-        if (CB_Seek.SelectedIndex == 0) // Specific item
+        if (CB_Seek.SelectedIndex == 1) // Maximize specific item (use 10)
         {
-            var result = Generator.FindNextBall(ticks, itemId);
-            return
-                $"Next target for {ItemNames.Names[itemId]} ({itemId}): {TimeUtil.GetDateTime(result)}{Environment.NewLine}" +
-                $"Delay: {result - ticks} seconds ({(float)(result - ticks) / 60:F2}){Environment.NewLine}" +
-                $"Time: {result}";
-        }
-
-        if (CB_Seek.SelectedIndex == 1) // Maximize specific item
-        {
-            var (result, count) = Generator.MaxResultsBall(itemId, ticks, ticks + SecondsToSearch);
+            var (result, count) = Generator.MaxResults(itemId, ticks, ticks + SecondsToSearch, mode);
             return
                 $"Next target for {ItemNames.Names[itemId]} ({itemId}): {TimeUtil.GetDateTime(result)}{Environment.NewLine}" +
                 $"Delay: {result - ticks} seconds ({(float)(result - ticks) / 60:F2}){Environment.NewLine}" +
@@ -115,11 +118,21 @@ public partial class Main : Form
                 $"Count: {count}";
         }
 
-        if (CB_Seek.SelectedIndex == 2) // Maximize all valuable balls
+        if (CB_Seek.SelectedIndex == 2)
         {
-            Span<Item> items = stackalloc Item[10];
-            var (result, count) = Generator.MaxResultsAnyBall(ticks, ticks + SecondsToSearch, items);
-            return GetSetList(items, result, ticks, count, ItemNames.Names);
+            if (mode == PrintMode.BallBonus) // Maximize all valuables
+            {
+                Span<Item> items = stackalloc Item[10];
+                var (result, count) = Generator.MaxResultsAnyBall(ticks, ticks + SecondsToSearch, items);
+                return GetSetList(items, result, ticks, count, ItemNames.Names);
+            }
+            else
+            {
+                // TODO: MANY ITEMS?
+                Span<Item> items = stackalloc Item[10];
+                var (result, count) = Generator.MaxResultsAny(ticks, ticks + SecondsToSearch, items, itemId);
+                return GetSetList(items, result, ticks, count, ItemNames.Names);
+            }
         }
 
         throw new Exception("Invalid mode");
