@@ -1,0 +1,185 @@
+{
+  "Table": [
+    {
+      "Param": {
+        "Table": [
+          {
+            "ItemId": 1,
+            "EmergePercent": 75,
+            "LotteryItemNumMin": 1,
+            "LotteryItemNumMax": 1,
+            "ProductionPriority": 4
+          },
+          {
+            "ItemId": 2,
+            "EmergePercent": 205,
+            "LotteryItemNumMin": 5,
+            "LotteryItemNumMax": 5,
+            "ProductionPriority": 2
+          },
+          {
+            "ItemId": 3,
+            "EmergePercent": 1250,
+            "LotteryItemNumMin": 5,
+            "LotteryItemNumMax": 5,
+            "ProductionPriority": 1
+          },
+          {
+            "ItemId": 4,
+            "EmergePercent": 1500,
+            "LotteryItemNumMin": 5,
+            "LotteryItemNumMax": 5,
+            "ProductionPriority": 0
+          },
+          {
+            "ItemId": 5,
+            "EmergePercent": 175,
+            "LotteryItemNumMin": 1,
+            "LotteryItemNumMax": 1,
+            "ProductionPriority": 4
+          },
+          {
+            "ItemId": 6,
+            "EmergePercent": 185,
+            "LotteryItemNumMin": 5,
+            "LotteryItemNumMax": 5,
+            "ProductionPriority": 2
+          },
+          {
+            "ItemId": 7,
+            "EmergePercent": 185,
+            "LotteryItemNumMin": 5,
+            "LotteryItemNumMax": 5,
+            "ProductionPriority": 2
+          },
+          {
+            "ItemId": 8,
+            "EmergePercent": 185,
+            "LotteryItemNumMin": 5,
+            "LotteryItemNumMax": 5,
+            "ProductionPriority": 2
+          },
+          {
+            "ItemId": 9,
+            "EmergePercent": 185,
+            "LotteryItemNumMin": 5,
+            "LotteryItemNumMax": 5,
+            "ProductionPriority": 2
+          },
+          {
+            "ItemId": 10,
+            "EmergePercent": 185,
+            "LotteryItemNumMin": 5,
+            "LotteryItemNumMax": 5,
+            "ProductionPriority": 2
+          },
+          {
+            "ItemId": 11,
+            "EmergePercent": 1000,
+            "LotteryItemNumMin": 5,
+            "LotteryItemNumMax": 5,
+            "ProductionPriority": 3
+          },
+          {
+            "ItemId": 12,
+            "EmergePercent": 1500,
+            "LotteryItemNumMin": 5,
+            "LotteryItemNumMax": 5,
+            "ProductionPriority": 0
+          },
+          {
+            "ItemId": 13,
+            "EmergePercent": 185,
+            "LotteryItemNumMin": 5,
+            "LotteryItemNumMax": 5,
+            "ProductionPriority": 2
+          },
+          {
+            "ItemId": 14,
+            "EmergePercent": 1250,
+            "LotteryItemNumMin": 5,
+            "LotteryItemNumMax": 5,
+            "ProductionPriority": 1
+          },
+          {
+            "ItemId": 15,
+            "EmergePercent": 185,
+            "LotteryItemNumMin": 5,
+            "LotteryItemNumMax": 5,
+            "ProductionPriority": 2
+          },
+          {
+            "ItemId": 492,
+            "EmergePercent": 175,
+            "LotteryItemNumMin": 1,
+            "LotteryItemNumMax": 1,
+            "ProductionPriority": 4
+          },
+          {
+            "ItemId": 493,
+            "EmergePercent": 175,
+            "LotteryItemNumMin": 1,
+            "LotteryItemNumMax": 1,
+            "ProductionPriority": 4
+          },
+          {
+            "ItemId": 494,
+            "EmergePercent": 175,
+            "LotteryItemNumMin": 1,
+            "LotteryItemNumMax": 1,
+            "ProductionPriority": 4
+          },
+          {
+            "ItemId": 495,
+            "EmergePercent": 175,
+            "LotteryItemNumMin": 1,
+            "LotteryItemNumMax": 1,
+            "ProductionPriority": 4
+          },
+          {
+            "ItemId": 496,
+            "EmergePercent": 175,
+            "LotteryItemNumMin": 1,
+            "LotteryItemNumMax": 1,
+            "ProductionPriority": 4
+          },
+          {
+            "ItemId": 497,
+            "EmergePercent": 175,
+            "LotteryItemNumMin": 1,
+            "LotteryItemNumMax": 1,
+            "ProductionPriority": 4
+          },
+          {
+            "ItemId": 498,
+            "EmergePercent": 175,
+            "LotteryItemNumMin": 1,
+            "LotteryItemNumMax": 1,
+            "ProductionPriority": 4
+          },
+          {
+            "ItemId": 499,
+            "EmergePercent": 175,
+            "LotteryItemNumMin": 1,
+            "LotteryItemNumMax": 1,
+            "ProductionPriority": 4
+          },
+          {
+            "ItemId": 576,
+            "EmergePercent": 175,
+            "LotteryItemNumMin": 1,
+            "LotteryItemNumMax": 1,
+            "ProductionPriority": 4
+          },
+          {
+            "ItemId": 851,
+            "EmergePercent": 175,
+            "LotteryItemNumMin": 1,
+            "LotteryItemNumMax": 1,
+            "ProductionPriority": 4
+          }
+        ]
+      }
+    }
+  ]
+}
