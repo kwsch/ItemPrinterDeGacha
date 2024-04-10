@@ -8,30 +8,9 @@ namespace ItemPrinterDeGacha.WinForms.Controls
         {
             InitializeComponent();
             CB_Mode.SelectedIndex = 2; // Ball
+            CB_Count.SelectedIndex = CB_Count.Items.Count - 1;
             CB_Mode.SelectedIndexChanged += (_, _) => TryPrint();
-        }
-
-        private int previousCount = 1;
-
-        private void NUD_ItemCount_ValueChanged(object sender, EventArgs e)
-        {
-            var value = NUD_ItemCount.Value;
-            if (value == previousCount)
-                return;
-
-            // Force values to 1, 5, or 10.
-            if (value is not (1 or 5 or 10))
-            {
-                NUD_ItemCount.Value = previousCount = value switch
-                {
-                    < 5 => value < previousCount ? 1 : 5,
-                    < 10 => value < previousCount ? 5 : 10,
-                    _ => 10,
-                };
-                return;
-            }
-
-            TryPrint();
+            CB_Count.SelectedIndexChanged += (_, _) => TryPrint();
         }
 
         private void MTB_Seed_TextChanged(object sender, EventArgs e) => TryPrint();
@@ -55,13 +34,12 @@ namespace ItemPrinterDeGacha.WinForms.Controls
                 System.Media.SystemSounds.Beep.Play();
                 return;
             }
-
             Print(seed);
         }
 
         private void Print(ulong seed)
         {
-            var count = (int)NUD_ItemCount.Value;
+            var count = int.Parse(CB_Count.Text);
             var mode = (PrintMode)CB_Mode.SelectedIndex;
             Populate(ADJ_0, L_0, seed, count, mode);
             Populate(ADJ_N1, L_N1, seed - 1, count, mode);

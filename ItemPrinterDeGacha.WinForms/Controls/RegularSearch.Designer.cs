@@ -112,9 +112,9 @@ namespace ItemPrinterDeGacha.WinForms.Controls
             // 
             // CB_Item
             // 
-            CB_Item.DropDownStyle = ComboBoxStyle.DropDownList;
+            CB_Item.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            CB_Item.AutoCompleteSource = AutoCompleteSource.ListItems;
             CB_Item.FormattingEnabled = true;
-            CB_Item.Items.AddRange(new object[] { "Regular", "ItemBonus", "BallBonus" });
             CB_Item.Location = new Point(194, 44);
             CB_Item.Name = "CB_Item";
             CB_Item.Size = new Size(100, 23);

@@ -58,6 +58,7 @@ namespace ItemPrinterDeGacha.WinForms
             tabControl1.Size = new Size(723, 427);
             tabControl1.SizeMode = TabSizeMode.Fixed;
             tabControl1.TabIndex = 0;
+            tabControl1.SelectedIndexChanged += ChangeSelectedTab;
             // 
             // Tab_Bonus
             // 
@@ -144,6 +145,7 @@ namespace ItemPrinterDeGacha.WinForms
             Name = "Main";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ItemPrinterDeGacha";
+            FormClosed += Main_FormClosed;
             tabControl1.ResumeLayout(false);
             Tab_Bonus.ResumeLayout(false);
             Tab_Regular.ResumeLayout(false);

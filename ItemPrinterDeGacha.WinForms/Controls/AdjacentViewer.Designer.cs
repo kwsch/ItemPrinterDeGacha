@@ -40,8 +40,7 @@ namespace ItemPrinterDeGacha.WinForms.Controls
             L_Mode = new Label();
             L_Seed = new Label();
             MTB_Seed = new MaskedTextBox();
-            NUD_ItemCount = new NumericUpDown();
-            ((System.ComponentModel.ISupportInitialize)NUD_ItemCount).BeginInit();
+            CB_Count = new ComboBox();
             SuspendLayout();
             // 
             // ADJ_N1
@@ -125,7 +124,7 @@ namespace ItemPrinterDeGacha.WinForms.Controls
             CB_Mode.Items.AddRange(new object[] { "Regular", "ItemBonus", "BallBonus" });
             CB_Mode.Location = new Point(335, 6);
             CB_Mode.Name = "CB_Mode";
-            CB_Mode.Size = new Size(78, 23);
+            CB_Mode.Size = new Size(92, 23);
             CB_Mode.TabIndex = 1;
             // 
             // L_Mode
@@ -156,22 +155,21 @@ namespace ItemPrinterDeGacha.WinForms.Controls
             MTB_Seed.TabIndex = 3;
             MTB_Seed.TextChanged += MTB_Seed_TextChanged;
             // 
-            // NUD_ItemCount
+            // CB_Count
             // 
-            NUD_ItemCount.Location = new Point(419, 6);
-            NUD_ItemCount.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
-            NUD_ItemCount.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
-            NUD_ItemCount.Name = "NUD_ItemCount";
-            NUD_ItemCount.Size = new Size(45, 23);
-            NUD_ItemCount.TabIndex = 2;
-            NUD_ItemCount.Value = new decimal(new int[] { 10, 0, 0, 0 });
-            NUD_ItemCount.ValueChanged += NUD_ItemCount_ValueChanged;
+            CB_Count.DropDownStyle = ComboBoxStyle.DropDownList;
+            CB_Count.FormattingEnabled = true;
+            CB_Count.Items.AddRange(new object[] { "1", "5", "10" });
+            CB_Count.Location = new Point(433, 6);
+            CB_Count.Name = "CB_Count";
+            CB_Count.Size = new Size(39, 23);
+            CB_Count.TabIndex = 12;
             // 
             // AdjacentViewer
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(NUD_ItemCount);
+            Controls.Add(CB_Count);
             Controls.Add(MTB_Seed);
             Controls.Add(L_Seed);
             Controls.Add(L_Mode);
@@ -186,7 +184,6 @@ namespace ItemPrinterDeGacha.WinForms.Controls
             Controls.Add(ADJ_N1);
             Name = "AdjacentViewer";
             Size = new Size(709, 334);
-            ((System.ComponentModel.ISupportInitialize)NUD_ItemCount).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -205,6 +202,6 @@ namespace ItemPrinterDeGacha.WinForms.Controls
         private Label L_Mode;
         private Label L_Seed;
         private MaskedTextBox MTB_Seed;
-        private NumericUpDown NUD_ItemCount;
+        private ComboBox CB_Count;
     }
 }

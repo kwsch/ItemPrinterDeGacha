@@ -22,9 +22,6 @@ public static class TimeUtil
 
         // Check that the datetime is valid
         var time = GetDateTime(seed);
-        if (time.Year is < 2000 or > 2100)
-            return false;
-
-        return true;
+        return time.Year is >= 2000 and <= 2100;
     }
 }

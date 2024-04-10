@@ -1,6 +1,5 @@
 using ItemPrinterDeGacha.Core;
 using PKHeX.Core;
-using PKHeX.Drawing.PokeSprite;
 
 namespace ItemPrinterDeGacha.WinForms.Controls;
 
@@ -27,7 +26,8 @@ public partial class ItemResultGridView : UserControl
         rows.Clear();
         foreach (var item in itemSpan)
         {
-            var img = SpriteUtil.GetItemSprite(item.ItemId);
+            var img = PKHeX.Drawing.PokeSprite.Properties.Resources.ResourceManager
+                .GetObject($"aitem_{item.ItemId}");
             rows.Add(item.Count, img, names[item.ItemId]);
         }
     }
