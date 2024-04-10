@@ -1,15 +1,33 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net8.0-windows</TargetFramework>
-    <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+
+    <PackageId>ItemPrinterDeGacha</PackageId>
+    <AssemblyName>ItemPrinterDeGacha</AssemblyName>
+    <Description>Item Printer De-Randomizer</Description>
+    <StartupObject>ItemPrinterDeGacha.WinForms.Program</StartupObject>
+    <RootNamespace>ItemPrinterDeGacha.WinForms</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="PKHeX.Core" Version="24.3.26" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\ItemPrinterDeGacha.Core\ItemPrinterDeGacha.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="PKHeX.Drawing">
+      <HintPath>deps\PKHeX.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="PKHeX.Drawing.PokeSprite">
+      <HintPath>deps\PKHeX.Drawing.PokeSprite.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

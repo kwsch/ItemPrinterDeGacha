@@ -14,4 +14,17 @@ public static class TimeUtil
     /// Convert time_t (seconds) to DateTime format.
     /// </summary>
     public static DateTime GetDateTime(ulong time) => Epoch.AddSeconds(time);
+
+    public static bool TryGetValidSeed(ReadOnlySpan<char> text, out ulong seed)
+    {
+        if (!ulong.TryParse(text, out seed))
+            return false;
+
+        // Check that the datetime is valid
+        var time = GetDateTime(seed);
+        if (time.Year is < 2000 or > 2100)
+            return false;
+
+        return true;
+    }
 }

@@ -1,4 +1,4 @@
-﻿namespace ItemPrinterDeGacha
+namespace ItemPrinterDeGacha.WinForms
 {
     partial class Main
     {
@@ -28,234 +28,139 @@
         /// </summary>
         private void InitializeComponent()
         {
-            groupBox1 = new GroupBox();
-            TB_Time = new TextBox();
-            RB_TimeSpecific = new RadioButton();
-            RB_TimeCurrent = new RadioButton();
-            NUD_ItemID = new NumericUpDown();
-            CB_Mode = new ComboBox();
-            CB_TargetMode = new ComboBox();
-            label1 = new Label();
-            label2 = new Label();
-            L_Target = new Label();
-            RTB_Result = new RichTextBox();
-            B_Generate = new Button();
-            label4 = new Label();
-            CB_Seek = new ComboBox();
-            NUD_Seconds = new NumericUpDown();
-            label3 = new Label();
-            groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)NUD_ItemID).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)NUD_Seconds).BeginInit();
+            tabControl1 = new TabControl();
+            Tab_Bonus = new TabPage();
+            modeSearch1 = new WinForms.Controls.ModeSearch();
+            Tab_Adjacent = new TabPage();
+            adjacentViewer1 = new WinForms.Controls.AdjacentViewer();
+            Tab_Regular = new TabPage();
+            regularSearch1 = new WinForms.Controls.RegularSearch();
+            Tab_Ball = new TabPage();
+            ballSearch1 = new WinForms.Controls.BallSearch();
+            tabControl1.SuspendLayout();
+            Tab_Bonus.SuspendLayout();
+            Tab_Adjacent.SuspendLayout();
+            Tab_Regular.SuspendLayout();
+            Tab_Ball.SuspendLayout();
             SuspendLayout();
             // 
-            // groupBox1
+            // tabControl1
             // 
-            groupBox1.Controls.Add(TB_Time);
-            groupBox1.Controls.Add(RB_TimeSpecific);
-            groupBox1.Controls.Add(RB_TimeCurrent);
-            groupBox1.Location = new Point(12, 12);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(112, 84);
-            groupBox1.TabIndex = 1;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Time";
+            tabControl1.Controls.Add(Tab_Bonus);
+            tabControl1.Controls.Add(Tab_Regular);
+            tabControl1.Controls.Add(Tab_Ball);
+            tabControl1.Controls.Add(Tab_Adjacent);
+            tabControl1.Dock = DockStyle.Fill;
+            tabControl1.ItemSize = new Size(128, 32);
+            tabControl1.Location = new Point(0, 0);
+            tabControl1.Name = "tabControl1";
+            tabControl1.SelectedIndex = 0;
+            tabControl1.Size = new Size(734, 421);
+            tabControl1.SizeMode = TabSizeMode.Fixed;
+            tabControl1.TabIndex = 0;
             // 
-            // TB_Time
+            // Tab_Bonus
             // 
-            TB_Time.Location = new Point(6, 54);
-            TB_Time.Name = "TB_Time";
-            TB_Time.ReadOnly = true;
-            TB_Time.Size = new Size(100, 23);
-            TB_Time.TabIndex = 2;
+            Tab_Bonus.Controls.Add(modeSearch1);
+            Tab_Bonus.Location = new Point(4, 36);
+            Tab_Bonus.Name = "Tab_Bonus";
+            Tab_Bonus.Size = new Size(726, 381);
+            Tab_Bonus.TabIndex = 0;
+            Tab_Bonus.Text = "Bonus";
+            Tab_Bonus.UseVisualStyleBackColor = true;
             // 
-            // RB_TimeSpecific
+            // modeSearch1
             // 
-            RB_TimeSpecific.AutoSize = true;
-            RB_TimeSpecific.Location = new Point(6, 32);
-            RB_TimeSpecific.Name = "RB_TimeSpecific";
-            RB_TimeSpecific.Size = new Size(95, 19);
-            RB_TimeSpecific.TabIndex = 1;
-            RB_TimeSpecific.TabStop = true;
-            RB_TimeSpecific.Text = "Specific Ticks";
-            RB_TimeSpecific.UseVisualStyleBackColor = true;
-            RB_TimeSpecific.CheckedChanged += ChangeTimeMode;
+            modeSearch1.Dock = DockStyle.Fill;
+            modeSearch1.Location = new Point(0, 0);
+            modeSearch1.Name = "modeSearch1";
+            modeSearch1.Size = new Size(726, 381);
+            modeSearch1.TabIndex = 0;
             // 
-            // RB_TimeCurrent
+            // Tab_Adjacent
             // 
-            RB_TimeCurrent.AutoSize = true;
-            RB_TimeCurrent.Checked = true;
-            RB_TimeCurrent.Location = new Point(6, 13);
-            RB_TimeCurrent.Name = "RB_TimeCurrent";
-            RB_TimeCurrent.Size = new Size(94, 19);
-            RB_TimeCurrent.TabIndex = 0;
-            RB_TimeCurrent.TabStop = true;
-            RB_TimeCurrent.Text = "Current Time";
-            RB_TimeCurrent.UseVisualStyleBackColor = true;
-            RB_TimeCurrent.CheckedChanged += ChangeTimeMode;
+            Tab_Adjacent.Controls.Add(adjacentViewer1);
+            Tab_Adjacent.Location = new Point(4, 36);
+            Tab_Adjacent.Name = "Tab_Adjacent";
+            Tab_Adjacent.Padding = new Padding(3);
+            Tab_Adjacent.Size = new Size(726, 381);
+            Tab_Adjacent.TabIndex = 1;
+            Tab_Adjacent.Text = "Adjacent";
+            Tab_Adjacent.UseVisualStyleBackColor = true;
             // 
-            // NUD_ItemID
+            // adjacentViewer1
             // 
-            NUD_ItemID.Location = new Point(526, 45);
-            NUD_ItemID.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
-            NUD_ItemID.Name = "NUD_ItemID";
-            NUD_ItemID.Size = new Size(80, 23);
-            NUD_ItemID.TabIndex = 2;
-            NUD_ItemID.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            adjacentViewer1.Dock = DockStyle.Fill;
+            adjacentViewer1.Location = new Point(3, 3);
+            adjacentViewer1.Name = "adjacentViewer1";
+            adjacentViewer1.Size = new Size(720, 375);
+            adjacentViewer1.TabIndex = 0;
             // 
-            // CB_Mode
+            // Tab_Regular
             // 
-            CB_Mode.DropDownStyle = ComboBoxStyle.DropDownList;
-            CB_Mode.FormattingEnabled = true;
-            CB_Mode.Items.AddRange(new object[] { "Regular", "ItemBonus", "BallBonus" });
-            CB_Mode.Location = new Point(198, 20);
-            CB_Mode.Name = "CB_Mode";
-            CB_Mode.Size = new Size(100, 23);
-            CB_Mode.TabIndex = 0;
-            CB_Mode.SelectedIndexChanged += CB_Mode_SelectedIndexChanged;
+            Tab_Regular.Controls.Add(regularSearch1);
+            Tab_Regular.Location = new Point(4, 36);
+            Tab_Regular.Name = "Tab_Regular";
+            Tab_Regular.Size = new Size(726, 381);
+            Tab_Regular.TabIndex = 2;
+            Tab_Regular.Text = "Regular";
+            Tab_Regular.UseVisualStyleBackColor = true;
             // 
-            // CB_TargetMode
+            // regularSearch1
             // 
-            CB_TargetMode.DropDownStyle = ComboBoxStyle.DropDownList;
-            CB_TargetMode.FormattingEnabled = true;
-            CB_TargetMode.Items.AddRange(new object[] { "ItemBonus", "BallBonus" });
-            CB_TargetMode.Location = new Point(370, 20);
-            CB_TargetMode.Name = "CB_TargetMode";
-            CB_TargetMode.Size = new Size(80, 23);
-            CB_TargetMode.TabIndex = 4;
+            regularSearch1.Dock = DockStyle.Fill;
+            regularSearch1.Location = new Point(0, 0);
+            regularSearch1.Name = "regularSearch1";
+            regularSearch1.Size = new Size(726, 381);
+            regularSearch1.TabIndex = 0;
             // 
-            // label1
+            // Tab_Ball
             // 
-            label1.Location = new Point(132, 19);
-            label1.Name = "label1";
-            label1.Size = new Size(60, 24);
-            label1.TabIndex = 5;
-            label1.Text = "Mode";
-            label1.TextAlign = ContentAlignment.MiddleRight;
+            Tab_Ball.Controls.Add(ballSearch1);
+            Tab_Ball.Location = new Point(4, 36);
+            Tab_Ball.Name = "Tab_Ball";
+            Tab_Ball.Size = new Size(726, 381);
+            Tab_Ball.TabIndex = 3;
+            Tab_Ball.Text = "Ball";
+            Tab_Ball.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // ballSearch1
             // 
-            label2.Location = new Point(460, 45);
-            label2.Name = "label2";
-            label2.Size = new Size(60, 24);
-            label2.TabIndex = 6;
-            label2.Text = "Item ID";
-            label2.TextAlign = ContentAlignment.MiddleRight;
-            // 
-            // L_Target
-            // 
-            L_Target.Location = new Point(304, 19);
-            L_Target.Name = "L_Target";
-            L_Target.Size = new Size(60, 24);
-            L_Target.TabIndex = 7;
-            L_Target.Text = "Target";
-            L_Target.TextAlign = ContentAlignment.MiddleRight;
-            // 
-            // RTB_Result
-            // 
-            RTB_Result.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            RTB_Result.Location = new Point(12, 102);
-            RTB_Result.Name = "RTB_Result";
-            RTB_Result.ReadOnly = true;
-            RTB_Result.Size = new Size(674, 291);
-            RTB_Result.TabIndex = 8;
-            RTB_Result.Text = "";
-            // 
-            // B_Generate
-            // 
-            B_Generate.BackColor = SystemColors.ActiveCaption;
-            B_Generate.Location = new Point(252, 51);
-            B_Generate.Name = "B_Generate";
-            B_Generate.Size = new Size(132, 45);
-            B_Generate.TabIndex = 9;
-            B_Generate.Text = "Generate";
-            B_Generate.UseVisualStyleBackColor = false;
-            B_Generate.Click += B_Generate_Click;
-            // 
-            // label4
-            // 
-            label4.Location = new Point(460, 20);
-            label4.Name = "label4";
-            label4.Size = new Size(60, 24);
-            label4.TabIndex = 11;
-            label4.Text = "Seek";
-            label4.TextAlign = ContentAlignment.MiddleRight;
-            // 
-            // CB_Seek
-            // 
-            CB_Seek.DropDownStyle = ComboBoxStyle.DropDownList;
-            CB_Seek.FormattingEnabled = true;
-            CB_Seek.Items.AddRange(new object[] { "Single", "MostSingle", "MostSpecial" });
-            CB_Seek.Location = new Point(526, 19);
-            CB_Seek.Name = "CB_Seek";
-            CB_Seek.Size = new Size(80, 23);
-            CB_Seek.TabIndex = 10;
-            CB_Seek.SelectedIndexChanged += CB_Mode_SelectedIndexChanged;
-            // 
-            // NUD_Seconds
-            // 
-            NUD_Seconds.Location = new Point(526, 73);
-            NUD_Seconds.Maximum = new decimal(new int[] { 100000000, 0, 0, 0 });
-            NUD_Seconds.Name = "NUD_Seconds";
-            NUD_Seconds.Size = new Size(80, 23);
-            NUD_Seconds.TabIndex = 12;
-            NUD_Seconds.Value = new decimal(new int[] { 10000, 0, 0, 0 });
-            // 
-            // label3
-            // 
-            label3.Location = new Point(460, 73);
-            label3.Name = "label3";
-            label3.Size = new Size(60, 24);
-            label3.TabIndex = 13;
-            label3.Text = "Seconds";
-            label3.TextAlign = ContentAlignment.MiddleRight;
+            ballSearch1.Dock = DockStyle.Fill;
+            ballSearch1.Location = new Point(0, 0);
+            ballSearch1.Name = "ballSearch1";
+            ballSearch1.Size = new Size(726, 381);
+            ballSearch1.TabIndex = 0;
             // 
             // Main
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(698, 405);
-            Controls.Add(label3);
-            Controls.Add(NUD_Seconds);
-            Controls.Add(label4);
-            Controls.Add(CB_Seek);
-            Controls.Add(B_Generate);
-            Controls.Add(RTB_Result);
-            Controls.Add(L_Target);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(CB_Mode);
-            Controls.Add(CB_TargetMode);
-            Controls.Add(NUD_ItemID);
-            Controls.Add(groupBox1);
+            ClientSize = new Size(734, 421);
+            Controls.Add(tabControl1);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "Main";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ItemPrinterDeGacha";
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)NUD_ItemID).EndInit();
-            ((System.ComponentModel.ISupportInitialize)NUD_Seconds).EndInit();
+            tabControl1.ResumeLayout(false);
+            Tab_Bonus.ResumeLayout(false);
+            Tab_Adjacent.ResumeLayout(false);
+            Tab_Regular.ResumeLayout(false);
+            Tab_Ball.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
-        private GroupBox groupBox1;
-        private TextBox TB_Time;
-        private RadioButton RB_TimeSpecific;
-        private RadioButton RB_TimeCurrent;
-        private NumericUpDown NUD_ItemID;
-        private ComboBox CB_Mode;
-        private ComboBox CB_TargetMode;
-        private Label label1;
-        private Label label2;
-        private Label L_Target;
-        private RichTextBox RTB_Result;
-        private Button B_Generate;
-        private Label label4;
-        private ComboBox CB_Seek;
-        private NumericUpDown NUD_Seconds;
-        private Label label3;
+
+        private TabControl tabControl1;
+        private TabPage Tab_Bonus;
+        private TabPage Tab_Adjacent;
+        private TabPage Tab_Regular;
+        private TabPage Tab_Ball;
+        private WinForms.Controls.AdjacentViewer adjacentViewer1;
+        private WinForms.Controls.RegularSearch regularSearch1;
+        private WinForms.Controls.BallSearch ballSearch1;
+        private WinForms.Controls.ModeSearch modeSearch1;
     }
 }
