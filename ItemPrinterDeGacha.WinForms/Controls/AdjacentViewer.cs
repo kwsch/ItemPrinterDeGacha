@@ -11,6 +11,28 @@ namespace ItemPrinterDeGacha.WinForms.Controls
             CB_Count.SelectedIndex = CB_Count.Items.Count - 1;
             CB_Mode.SelectedIndexChanged += (_, _) => TryPrint();
             CB_Count.SelectedIndexChanged += (_, _) => TryPrint();
+            Resize += AdjacentViewer_Resize;
+        }
+
+        private void AdjacentViewer_Resize(object sender, EventArgs e)
+        {
+            AdjustDataGridViewSizes();
+        }
+
+        private void AdjustDataGridViewSizes()
+        {
+            int padding = 10;
+            int totalWidth = Width - (padding * 4);
+            int columnWidth = totalWidth / 3;
+            int height = Height - 120;
+
+            ADJ_N1.Size = new Size(columnWidth, height);
+            ADJ_0.Size = new Size(columnWidth, height);
+            ADJ_P1.Size = new Size(columnWidth, height);
+
+            ADJ_N1.Location = new Point(padding, ADJ_N1.Location.Y);
+            ADJ_0.Location = new Point(padding * 2 + columnWidth, ADJ_0.Location.Y);
+            ADJ_P1.Location = new Point(padding * 3 + columnWidth * 2, ADJ_P1.Location.Y);
         }
 
         private void MTB_Seed_TextChanged(object sender, EventArgs e) => TryPrint();

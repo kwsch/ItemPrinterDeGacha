@@ -45,23 +45,26 @@ namespace ItemPrinterDeGacha.WinForms.Controls
             // 
             // ADJ_N1
             // 
-            ADJ_N1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            ADJ_N1.AutoSize = true;
+            ADJ_N1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             ADJ_N1.Location = new Point(1, 83);
             ADJ_N1.Name = "ADJ_N1";
             ADJ_N1.Size = new Size(235, 250);
             ADJ_N1.TabIndex = 6;
             // 
             // ADJ_0
-            // 
-            ADJ_0.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            //
+            ADJ_0.AutoSize = true;
+            ADJ_0.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             ADJ_0.Location = new Point(237, 83);
             ADJ_0.Name = "ADJ_0";
             ADJ_0.Size = new Size(235, 250);
             ADJ_0.TabIndex = 7;
             // 
             // ADJ_P1
-            // 
-            ADJ_P1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            //
+            ADJ_0.AutoSize = true;
+            ADJ_P1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             ADJ_P1.Location = new Point(473, 83);
             ADJ_P1.Name = "ADJ_P1";
             ADJ_P1.Size = new Size(235, 250);

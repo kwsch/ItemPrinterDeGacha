@@ -72,6 +72,8 @@ namespace ItemPrinterDeGacha.WinForms
             // 
             // modeSearch1
             // 
+            modeSearch1.AutoScaleMode = AutoScaleMode.Inherit;
+            modeSearch1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             modeSearch1.Dock = DockStyle.Fill;
             modeSearch1.Location = new Point(0, 0);
             modeSearch1.Name = "modeSearch1";
@@ -135,8 +137,9 @@ namespace ItemPrinterDeGacha.WinForms
             // 
             // Main
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleMode = AutoScaleMode.Dpi;
+            AutoSize = true;
             ClientSize = new Size(723, 427);
             Controls.Add(tabControl1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
