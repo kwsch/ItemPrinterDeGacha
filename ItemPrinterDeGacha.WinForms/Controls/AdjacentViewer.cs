@@ -11,7 +11,29 @@ namespace ItemPrinterDeGacha.WinForms.Controls
             CB_Mode.SelectedIndexChanged += (_, _) => TryPrint();
         }
 
-        private void NUD_ItemCount_ValueChanged(object sender, EventArgs e) => TryPrint();
+        private int previousCount = 1;
+
+        private void NUD_ItemCount_ValueChanged(object sender, EventArgs e)
+        {
+            var value = NUD_ItemCount.Value;
+            if (value == previousCount)
+                return;
+
+            // Force values to 1, 5, or 10.
+            if (value is not (1 or 5 or 10))
+            {
+                NUD_ItemCount.Value = previousCount = value switch
+                {
+                    < 5 => value < previousCount ? 1 : 5,
+                    < 10 => value < previousCount ? 5 : 10,
+                    _ => 10,
+                };
+                return;
+            }
+
+            TryPrint();
+        }
+
         private void MTB_Seed_TextChanged(object sender, EventArgs e) => TryPrint();
         private void B_MinusOne_Click(object sender, EventArgs e) => ChangeSeed(-1);
         private void B_AddOne_Click(object sender, EventArgs e) => ChangeSeed(+1);
@@ -55,14 +77,6 @@ namespace ItemPrinterDeGacha.WinForms.Controls
                 lbl.ForeColor = finalMode == PrintMode.BallBonus ? Color.Blue : Color.Red;
             else
                 lbl.ResetForeColor();
-        }
-
-        private void NUD_ItemCount_MouseClick(object sender, MouseEventArgs e)
-        {
-            // If rmb, toggle between 1 and 10.
-            if (e.Button != MouseButtons.Right)
-                return;
-            NUD_ItemCount.Value = NUD_ItemCount.Value == 1 ? 10 : 1;
         }
     }
 }

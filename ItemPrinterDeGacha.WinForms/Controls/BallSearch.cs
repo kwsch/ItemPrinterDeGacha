@@ -78,7 +78,7 @@ public partial class BallSearch : UserControl
 
             int c = -1;
             ulong result = 0;
-            while (true)
+            do
             {
                 for (uint i = min; i <= max; i++)
                 {
@@ -98,16 +98,15 @@ public partial class BallSearch : UserControl
                 }
 
                 ticks += 60;
-                if (ticks - seed >= count)
-                    break;
             }
+            while (ticks - seed < count);
             Populate(result, tmp.Length);
         }
         else
         {
             int c = -1;
             ulong result = 0;
-            while (true)
+            do
             {
                 for (uint i = min; i <= max; i++)
                 {
@@ -127,9 +126,8 @@ public partial class BallSearch : UserControl
                 }
 
                 ticks += 60;
-                if (ticks - seed >= count)
-                    break;
             }
+            while (ticks - seed < count);
             Populate(result, tmp.Length);
         }
     }

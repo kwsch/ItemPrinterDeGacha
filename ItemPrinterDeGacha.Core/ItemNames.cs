@@ -2,7 +2,7 @@ namespace ItemPrinterDeGacha.Core;
 
 public static class ItemNames
 {
-    public static string[] Names =
+    public static readonly string[] Names =
     [
         "None",
         "Master Ball",

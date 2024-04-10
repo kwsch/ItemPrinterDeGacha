@@ -91,7 +91,6 @@ namespace ItemPrinterDeGacha.WinForms.Controls
             // 
             // B_Search
             // 
-            B_Search.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             B_Search.BackColor = SystemColors.ActiveCaption;
             B_Search.Location = new Point(499, 8);
             B_Search.Name = "B_Search";

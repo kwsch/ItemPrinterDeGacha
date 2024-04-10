@@ -1,6 +1,6 @@
 namespace ItemPrinterDeGacha.WinForms;
 
-public partial class Main : Form
+public sealed partial class Main : Form
 {
     public Main()
     {

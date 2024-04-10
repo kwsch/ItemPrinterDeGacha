@@ -166,7 +166,6 @@ namespace ItemPrinterDeGacha.WinForms.Controls
             NUD_ItemCount.TabIndex = 2;
             NUD_ItemCount.Value = new decimal(new int[] { 10, 0, 0, 0 });
             NUD_ItemCount.ValueChanged += NUD_ItemCount_ValueChanged;
-            NUD_ItemCount.MouseClick += NUD_ItemCount_MouseClick;
             // 
             // AdjacentViewer
             // 

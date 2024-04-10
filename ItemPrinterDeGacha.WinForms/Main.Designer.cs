@@ -1,6 +1,6 @@
 namespace ItemPrinterDeGacha.WinForms
 {
-    partial class Main
+    sealed partial class Main
     {
         /// <summary>
         ///  Required designer variable.
@@ -30,18 +30,18 @@ namespace ItemPrinterDeGacha.WinForms
         {
             tabControl1 = new TabControl();
             Tab_Bonus = new TabPage();
-            modeSearch1 = new WinForms.Controls.ModeSearch();
-            Tab_Adjacent = new TabPage();
-            adjacentViewer1 = new WinForms.Controls.AdjacentViewer();
+            modeSearch1 = new Controls.ModeSearch();
             Tab_Regular = new TabPage();
-            regularSearch1 = new WinForms.Controls.RegularSearch();
+            regularSearch1 = new Controls.RegularSearch();
             Tab_Ball = new TabPage();
-            ballSearch1 = new WinForms.Controls.BallSearch();
+            ballSearch1 = new Controls.BallSearch();
+            Tab_Adjacent = new TabPage();
+            adjacentViewer1 = new Controls.AdjacentViewer();
             tabControl1.SuspendLayout();
             Tab_Bonus.SuspendLayout();
-            Tab_Adjacent.SuspendLayout();
             Tab_Regular.SuspendLayout();
             Tab_Ball.SuspendLayout();
+            Tab_Adjacent.SuspendLayout();
             SuspendLayout();
             // 
             // tabControl1
@@ -55,7 +55,7 @@ namespace ItemPrinterDeGacha.WinForms
             tabControl1.Location = new Point(0, 0);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(734, 421);
+            tabControl1.Size = new Size(723, 427);
             tabControl1.SizeMode = TabSizeMode.Fixed;
             tabControl1.TabIndex = 0;
             // 
@@ -64,7 +64,7 @@ namespace ItemPrinterDeGacha.WinForms
             Tab_Bonus.Controls.Add(modeSearch1);
             Tab_Bonus.Location = new Point(4, 36);
             Tab_Bonus.Name = "Tab_Bonus";
-            Tab_Bonus.Size = new Size(726, 381);
+            Tab_Bonus.Size = new Size(715, 387);
             Tab_Bonus.TabIndex = 0;
             Tab_Bonus.Text = "Bonus";
             Tab_Bonus.UseVisualStyleBackColor = true;
@@ -74,34 +74,15 @@ namespace ItemPrinterDeGacha.WinForms
             modeSearch1.Dock = DockStyle.Fill;
             modeSearch1.Location = new Point(0, 0);
             modeSearch1.Name = "modeSearch1";
-            modeSearch1.Size = new Size(726, 381);
+            modeSearch1.Size = new Size(715, 387);
             modeSearch1.TabIndex = 0;
-            // 
-            // Tab_Adjacent
-            // 
-            Tab_Adjacent.Controls.Add(adjacentViewer1);
-            Tab_Adjacent.Location = new Point(4, 36);
-            Tab_Adjacent.Name = "Tab_Adjacent";
-            Tab_Adjacent.Padding = new Padding(3);
-            Tab_Adjacent.Size = new Size(726, 381);
-            Tab_Adjacent.TabIndex = 1;
-            Tab_Adjacent.Text = "Adjacent";
-            Tab_Adjacent.UseVisualStyleBackColor = true;
-            // 
-            // adjacentViewer1
-            // 
-            adjacentViewer1.Dock = DockStyle.Fill;
-            adjacentViewer1.Location = new Point(3, 3);
-            adjacentViewer1.Name = "adjacentViewer1";
-            adjacentViewer1.Size = new Size(720, 375);
-            adjacentViewer1.TabIndex = 0;
             // 
             // Tab_Regular
             // 
             Tab_Regular.Controls.Add(regularSearch1);
             Tab_Regular.Location = new Point(4, 36);
             Tab_Regular.Name = "Tab_Regular";
-            Tab_Regular.Size = new Size(726, 381);
+            Tab_Regular.Size = new Size(715, 387);
             Tab_Regular.TabIndex = 2;
             Tab_Regular.Text = "Regular";
             Tab_Regular.UseVisualStyleBackColor = true;
@@ -111,7 +92,7 @@ namespace ItemPrinterDeGacha.WinForms
             regularSearch1.Dock = DockStyle.Fill;
             regularSearch1.Location = new Point(0, 0);
             regularSearch1.Name = "regularSearch1";
-            regularSearch1.Size = new Size(726, 381);
+            regularSearch1.Size = new Size(715, 387);
             regularSearch1.TabIndex = 0;
             // 
             // Tab_Ball
@@ -119,7 +100,7 @@ namespace ItemPrinterDeGacha.WinForms
             Tab_Ball.Controls.Add(ballSearch1);
             Tab_Ball.Location = new Point(4, 36);
             Tab_Ball.Name = "Tab_Ball";
-            Tab_Ball.Size = new Size(726, 381);
+            Tab_Ball.Size = new Size(715, 387);
             Tab_Ball.TabIndex = 3;
             Tab_Ball.Text = "Ball";
             Tab_Ball.UseVisualStyleBackColor = true;
@@ -129,15 +110,35 @@ namespace ItemPrinterDeGacha.WinForms
             ballSearch1.Dock = DockStyle.Fill;
             ballSearch1.Location = new Point(0, 0);
             ballSearch1.Name = "ballSearch1";
-            ballSearch1.Size = new Size(726, 381);
+            ballSearch1.Size = new Size(715, 387);
             ballSearch1.TabIndex = 0;
+            // 
+            // Tab_Adjacent
+            // 
+            Tab_Adjacent.Controls.Add(adjacentViewer1);
+            Tab_Adjacent.Location = new Point(4, 36);
+            Tab_Adjacent.Name = "Tab_Adjacent";
+            Tab_Adjacent.Padding = new Padding(3);
+            Tab_Adjacent.Size = new Size(715, 387);
+            Tab_Adjacent.TabIndex = 1;
+            Tab_Adjacent.Text = "Adjacent";
+            Tab_Adjacent.UseVisualStyleBackColor = true;
+            // 
+            // adjacentViewer1
+            // 
+            adjacentViewer1.Dock = DockStyle.Fill;
+            adjacentViewer1.Location = new Point(3, 3);
+            adjacentViewer1.Name = "adjacentViewer1";
+            adjacentViewer1.Size = new Size(709, 381);
+            adjacentViewer1.TabIndex = 0;
             // 
             // Main
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(734, 421);
+            ClientSize = new Size(723, 427);
             Controls.Add(tabControl1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "Main";
@@ -145,9 +146,9 @@ namespace ItemPrinterDeGacha.WinForms
             Text = "ItemPrinterDeGacha";
             tabControl1.ResumeLayout(false);
             Tab_Bonus.ResumeLayout(false);
-            Tab_Adjacent.ResumeLayout(false);
             Tab_Regular.ResumeLayout(false);
             Tab_Ball.ResumeLayout(false);
+            Tab_Adjacent.ResumeLayout(false);
             ResumeLayout(false);
         }
 

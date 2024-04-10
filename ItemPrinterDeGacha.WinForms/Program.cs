@@ -5,6 +5,7 @@ namespace ItemPrinterDeGacha.WinForms;
 internal static class Program
 {
     public const string TimeFormat = "yyyy-MM-dd HH:mm:ss";
+    private const string LanguageCode = "en"; // ja, fr, de, es, it, ko, zh, zh2
 
     /// <summary>
     ///  The main entry point for the application.
@@ -16,7 +17,7 @@ internal static class Program
         // see https://aka.ms/applicationconfiguration.
         ApplicationConfiguration.Initialize();
 
-        var strings = GameInfo.GetStrings("en");
+        var strings = GameInfo.GetStrings(LanguageCode);
         GameInfo.Strings = strings;
         var fake = new SAV9SV();
         var src = new GameDataSource(strings);

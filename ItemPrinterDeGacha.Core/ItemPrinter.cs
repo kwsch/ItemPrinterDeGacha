@@ -1,5 +1,4 @@
 using System.Diagnostics.CodeAnalysis;
-using System.Text;
 using System.Text.Json;
 
 namespace ItemPrinterDeGacha.Core;
@@ -18,8 +17,8 @@ public static class ItemPrinter
     static ItemPrinter()
     {
         var resource = Properties.Resources.item_table_array;
-        var text = Encoding.UTF8.GetString(resource);
-        var regular = JsonSerializer.Deserialize<LotteryRoot>(text)!.Table;
+        var text = new Utf8JsonReader(resource);
+        var regular = JsonSerializer.Deserialize<LotteryRoot>(ref text)!.Table;
         var orderR = regular
             .Select(x => x.Param.Value)
             .OrderBy(z => z.EmergePercent);
@@ -27,8 +26,8 @@ public static class ItemPrinter
         ItemJump = GenerateJumpTable(ItemTable, ItemRandMax);
 
         resource = Properties.Resources.special_item_table_array;
-        text = Encoding.UTF8.GetString(resource);
-        var balls = JsonSerializer.Deserialize<BallRoot>(text)!;
+        text = new Utf8JsonReader(resource);
+        var balls = JsonSerializer.Deserialize<BallRoot>(ref text)!;
         var orderB = balls.Table
             .SelectMany(x => x.Param.Table)
             .OrderBy(z => z.EmergePercent);
