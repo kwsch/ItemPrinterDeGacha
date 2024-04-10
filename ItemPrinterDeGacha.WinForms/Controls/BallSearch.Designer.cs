@@ -41,6 +41,8 @@ namespace ItemPrinterDeGacha.WinForms.Controls
             NUD_Max = new NumericUpDown();
             NUD_Min = new NumericUpDown();
             RTB_Result = new RichTextBox();
+            L_Jobs = new Label();
+            CB_Count = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)NUD_Seconds).BeginInit();
             ((System.ComponentModel.ISupportInitialize)NUD_Max).BeginInit();
             ((System.ComponentModel.ISupportInitialize)NUD_Min).BeginInit();
@@ -48,6 +50,7 @@ namespace ItemPrinterDeGacha.WinForms.Controls
             // 
             // tickToggle1
             // 
+            tickToggle1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             tickToggle1.Location = new Point(3, 3);
             tickToggle1.Name = "tickToggle1";
             tickToggle1.Size = new Size(112, 83);
@@ -104,7 +107,7 @@ namespace ItemPrinterDeGacha.WinForms.Controls
             // 
             // L_Item
             // 
-            L_Item.Location = new Point(121, 42);
+            L_Item.Location = new Point(121, 40);
             L_Item.Name = "L_Item";
             L_Item.Size = new Size(71, 24);
             L_Item.TabIndex = 24;
@@ -116,14 +119,14 @@ namespace ItemPrinterDeGacha.WinForms.Controls
             CB_Item.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             CB_Item.AutoCompleteSource = AutoCompleteSource.ListItems;
             CB_Item.FormattingEnabled = true;
-            CB_Item.Location = new Point(194, 44);
+            CB_Item.Location = new Point(194, 41);
             CB_Item.Name = "CB_Item";
             CB_Item.Size = new Size(100, 23);
             CB_Item.TabIndex = 2;
             // 
             // L_Max
             // 
-            L_Max.Location = new Point(308, 46);
+            L_Max.Location = new Point(308, 40);
             L_Max.Name = "L_Max";
             L_Max.Size = new Size(96, 24);
             L_Max.TabIndex = 32;
@@ -132,7 +135,7 @@ namespace ItemPrinterDeGacha.WinForms.Controls
             // 
             // L_Min
             // 
-            L_Min.Location = new Point(308, 18);
+            L_Min.Location = new Point(308, 14);
             L_Min.Name = "L_Min";
             L_Min.Size = new Size(96, 24);
             L_Min.TabIndex = 31;
@@ -141,7 +144,7 @@ namespace ItemPrinterDeGacha.WinForms.Controls
             // 
             // NUD_Max
             // 
-            NUD_Max.Location = new Point(410, 49);
+            NUD_Max.Location = new Point(410, 41);
             NUD_Max.Maximum = new decimal(new int[] { 59, 0, 0, 0 });
             NUD_Max.Name = "NUD_Max";
             NUD_Max.Size = new Size(44, 23);
@@ -150,7 +153,7 @@ namespace ItemPrinterDeGacha.WinForms.Controls
             // 
             // NUD_Min
             // 
-            NUD_Min.Location = new Point(410, 20);
+            NUD_Min.Location = new Point(410, 16);
             NUD_Min.Maximum = new decimal(new int[] { 59, 0, 0, 0 });
             NUD_Min.Name = "NUD_Min";
             NUD_Min.Size = new Size(44, 23);
@@ -168,10 +171,31 @@ namespace ItemPrinterDeGacha.WinForms.Controls
             RTB_Result.TabIndex = 33;
             RTB_Result.Text = "";
             // 
+            // L_Jobs
+            // 
+            L_Jobs.Location = new Point(121, 66);
+            L_Jobs.Name = "L_Jobs";
+            L_Jobs.Size = new Size(71, 24);
+            L_Jobs.TabIndex = 34;
+            L_Jobs.Text = "Jobs:";
+            L_Jobs.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // CB_Count
+            // 
+            CB_Count.DropDownStyle = ComboBoxStyle.DropDownList;
+            CB_Count.FormattingEnabled = true;
+            CB_Count.Items.AddRange(new object[] { "1", "5", "10" });
+            CB_Count.Location = new Point(194, 66);
+            CB_Count.Name = "CB_Count";
+            CB_Count.Size = new Size(39, 23);
+            CB_Count.TabIndex = 35;
+            // 
             // BallSearch
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleMode = AutoScaleMode.Inherit;
+            AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            Controls.Add(CB_Count);
+            Controls.Add(L_Jobs);
             Controls.Add(RTB_Result);
             Controls.Add(L_Max);
             Controls.Add(L_Min);
@@ -208,5 +232,7 @@ namespace ItemPrinterDeGacha.WinForms.Controls
         private NumericUpDown NUD_Max;
         private NumericUpDown NUD_Min;
         private RichTextBox RTB_Result;
+        private Label L_Jobs;
+        private ComboBox CB_Count;
     }
 }

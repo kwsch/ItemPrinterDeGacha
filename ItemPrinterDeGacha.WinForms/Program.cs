@@ -1,6 +1,5 @@
 using System.Text.Json;
-using PKHeX.Core;
-using PKHeX.Drawing.PokeSprite;
+using ItemPrinterDeGacha.Core;
 
 namespace ItemPrinterDeGacha.WinForms;
 
@@ -32,15 +31,9 @@ internal static class Program
     private static void InitializePKHeX()
     {
         var lang = "en";
-        if (GameLanguage.GetLanguageIndex(Settings.Language) >= 0)
+        if (Settings.Language.Length is 2 or 3)
             lang = Settings.Language;
-
-        var strings = GameInfo.GetStrings(lang);
-        GameInfo.Strings = strings;
-        var fake = new SAV9SV();
-        var src = new GameDataSource(strings);
-        GameInfo.FilteredSources = new FilteredGameDataSource(fake, src);
-        SpriteUtil.ChangeMode(SpriteBuilderMode.SpritesArtwork5668);
+        GameStrings.Initialize(lang);
     }
 
     private static readonly JsonSerializerOptions Options = new() { WriteIndented = true };

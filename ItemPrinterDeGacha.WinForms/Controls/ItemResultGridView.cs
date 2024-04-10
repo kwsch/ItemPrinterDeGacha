@@ -1,5 +1,4 @@
 using ItemPrinterDeGacha.Core;
-using PKHeX.Core;
 
 namespace ItemPrinterDeGacha.WinForms.Controls;
 
@@ -21,14 +20,13 @@ public partial class ItemResultGridView : UserControl
 
     private void Populate(ReadOnlySpan<Item> itemSpan)
     {
-        var names = GameInfo.Strings.Item;
         var rows = DGV_View.Rows;
         rows.Clear();
         foreach (var item in itemSpan)
         {
-            var img = PKHeX.Drawing.PokeSprite.Properties.Resources.ResourceManager
+            var img = Properties.Resources.ResourceManager
                 .GetObject($"aitem_{item.ItemId}");
-            rows.Add(item.Count, img, names[item.ItemId]);
+            rows.Add(item.Count, img, GameStrings.GetItemName(item.ItemId));
         }
     }
 }

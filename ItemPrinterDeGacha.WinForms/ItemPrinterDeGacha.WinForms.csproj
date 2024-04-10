@@ -24,20 +24,22 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="PKHeX.Core" Version="24.3.26" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\ItemPrinterDeGacha.Core\ItemPrinterDeGacha.Core.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="PKHeX.Drawing">
-      <HintPath>deps\PKHeX.Drawing.dll</HintPath>
-    </Reference>
-    <Reference Include="PKHeX.Drawing.PokeSprite">
-      <HintPath>deps\PKHeX.Drawing.PokeSprite.dll</HintPath>
-    </Reference>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>

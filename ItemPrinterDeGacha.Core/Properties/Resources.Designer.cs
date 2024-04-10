@@ -71,6 +71,1432 @@ namespace ItemPrinterDeGacha.Core.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to (Kein)
+        ///Meisterball
+        ///Hyperball
+        ///Superball
+        ///Pokéball
+        ///Safariball
+        ///Netzball
+        ///Tauchball
+        ///Nestball
+        ///Wiederball
+        ///Timerball
+        ///Luxusball
+        ///Premierball
+        ///Finsterball
+        ///Heilball
+        ///Flottball
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///Top-Genesung
+        ///Top-Trank
+        ///Hypertrank
+        ///Supertrank
+        ///Hyperheiler
+        ///Beleber
+        ///Top-Beleber
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///Äther
+        ///Top-Äther
+        ///Elixier
+        ///Top-Elixier
+        ///
+        ///
+        ///
+        ///KP-Plus
+        ///Protein
+        ///Eisen
+        ///Carbon
+        ///Kalzium
+        ///
+        ///AP-Plus
+        ///Zink
+        ///AP-Top
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///Sonnenstein
+        ///Mondstein
+        ///Feuerstein
+        ///Donnerstein
+        ///Wasserstein
+        ///Blattstein
+        ///Minipilz
+        ///Riesenpilz
+        ///Perle
+        ///Riesenperle
+        ///Sternenstaub
+        ///Sternenstück
+        ///Nugg [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string items_de {
+            get {
+                return ResourceManager.GetString("items_de", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to (None)
+        ///Master Ball
+        ///Ultra Ball
+        ///Great Ball
+        ///Poké Ball
+        ///Safari Ball
+        ///Net Ball
+        ///Dive Ball
+        ///Nest Ball
+        ///Repeat Ball
+        ///Timer Ball
+        ///Luxury Ball
+        ///Premier Ball
+        ///Dusk Ball
+        ///Heal Ball
+        ///Quick Ball
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///Full Restore
+        ///Max Potion
+        ///Hyper Potion
+        ///Super Potion
+        ///Full Heal
+        ///Revive
+        ///Max Revive
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///Ether
+        ///Max Ether
+        ///Elixir
+        ///Max Elixir
+        ///
+        ///
+        ///
+        ///HP Up
+        ///Protein
+        ///Iron
+        ///Carbos
+        ///Calcium
+        ///
+        ///PP Up
+        ///Zinc
+        ///PP Max
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///Sun Stone
+        ///Moon Stone
+        ///Fire Stone
+        ///Thunder Stone
+        ///Water Stone
+        ///Leaf Stone
+        ///Tiny Mushroom
+        ///Big Mushroom
+        ///Pearl
+        ///Big Pearl
+        ///Stardust
+        ///Star Piece
+        /// [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string items_en {
+            get {
+                return ResourceManager.GetString("items_en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to (Ningún)
+        ///Master Ball
+        ///Ultra Ball
+        ///Super Ball
+        ///Poké Ball
+        ///Safari Ball
+        ///Malla Ball
+        ///Buceo Ball
+        ///Nido Ball
+        ///Acopio Ball
+        ///Turno Ball
+        ///Lujo Ball
+        ///Honor Ball
+        ///Ocaso Ball
+        ///Sana Ball
+        ///Veloz Ball
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///Restaurar Todo
+        ///Poción Máxima
+        ///Hiperpoción
+        ///Superpoción
+        ///Cura Total
+        ///Revivir
+        ///Revivir Máximo
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///Éter
+        ///Éter Máximo
+        ///Elixir
+        ///Elixir Máximo
+        ///
+        ///
+        ///
+        ///Más PS
+        ///Proteína
+        ///Hierro
+        ///Carburante
+        ///Calcio
+        ///
+        ///Más PP
+        ///Zinc
+        ///PP Máximos
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///Piedra Solar
+        ///Piedra Lunar
+        ///Piedra Fuego
+        ///Piedra Trueno
+        ///Piedra Agua
+        ///Piedra Hoja
+        ///Miniseta
+        ///Seta Grande
+        ///Perla
+        ///P [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string items_es {
+            get {
+                return ResourceManager.GetString("items_es", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to (Aucun)
+        ///Master Ball
+        ///Hyper Ball
+        ///Super Ball
+        ///Poké Ball
+        ///Safari Ball
+        ///Filet Ball
+        ///Scuba Ball
+        ///Faiblo Ball
+        ///Bis Ball
+        ///Chrono Ball
+        ///Luxe Ball
+        ///Honor Ball
+        ///Sombre Ball
+        ///Soin Ball
+        ///Rapide Ball
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///Guérison
+        ///Potion Max
+        ///Hyper Potion
+        ///Super Potion
+        ///Total Soin
+        ///Rappel
+        ///Rappel Max
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///Huile
+        ///Huile Max
+        ///Élixir
+        ///Élixir Max
+        ///
+        ///
+        ///
+        ///PV Plus
+        ///Protéine
+        ///Fer
+        ///Carbone
+        ///Calcium
+        ///
+        ///PP Plus
+        ///Zinc
+        ///PP Max
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///Pierre Soleil
+        ///Pierre Lune
+        ///Pierre Feu
+        ///Pierre Foudre
+        ///Pierre Eau
+        ///Pierre Plante
+        ///Petit Champi
+        ///Gros Champi
+        ///Perle
+        ///Grande Perle
+        ///Poussiè [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string items_fr {
+            get {
+                return ResourceManager.GetString("items_fr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to (Niente)
+        ///Master Ball
+        ///Ultra Ball
+        ///Mega Ball
+        ///Poké Ball
+        ///Safari Ball
+        ///Rete Ball
+        ///Sub Ball
+        ///Minor Ball
+        ///Bis Ball
+        ///Timer Ball
+        ///Chic Ball
+        ///Premier Ball
+        ///Scuro Ball
+        ///Cura Ball
+        ///Velox Ball
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///Ricarica totale
+        ///Pozione max
+        ///Iperpozione
+        ///Superpozione
+        ///Cura totale
+        ///Revitalizzante
+        ///Revitalizzante max
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///Etere
+        ///Etere max
+        ///Elisir
+        ///Elisir max
+        ///
+        ///
+        ///
+        ///PS-su
+        ///Proteina
+        ///Ferro
+        ///Carburante
+        ///Calcio
+        ///
+        ///PP-su
+        ///Zinco
+        ///PP-max
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///Pietrasolare
+        ///Pietralunare
+        ///Pietrafocaia
+        ///Pietratuono
+        ///Pietraidrica
+        ///Pietrafoglia
+        ///Minifungo
+        ///Grande fungo
+        ///Perla
+        ///G [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string items_it {
+            get {
+                return ResourceManager.GetString("items_it", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to (なし)
+        ///マスターボール
+        ///ハイパーボール
+        ///スーパーボール
+        ///モンスターボール
+        ///サファリボール
+        ///ネットボール
+        ///ダイブボール
+        ///ネストボール
+        ///リピートボール
+        ///タイマーボール
+        ///ゴージャスボール
+        ///プレミアボール
+        ///ダークボール
+        ///ヒールボール
+        ///クイックボール
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///かいふくのくすり
+        ///まんたんのくすり
+        ///すごいキズぐすり
+        ///いいキズぐすり
+        ///なんでもなおし
+        ///げんきのかけら
+        ///げんきのかたまり
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///ピーピーエイド
+        ///ピーピーリカバー
+        ///ピーピーエイダー
+        ///ピーピーマックス
+        ///
+        ///
+        ///
+        ///マックスアップ
+        ///タウリン
+        ///ブロムヘキシン
+        ///インドメタシン
+        ///リゾチウム
+        ///
+        ///ポイントアップ
+        ///キトサン
+        ///ポイントマックス
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///たいようのいし
+        ///つきのいし
+        ///ほのおのいし
+        ///かみなりのいし
+        ///みずのいし
+        ///リーフのいし
+        ///ちいさなキノコ
+        ///おおきなキノコ
+        ///しんじゅ
+        ///おおきなしんじゅ
+        ///ほしのすな
+        ///ほしのかけら
+        ///きんのたま
+        ///
+        ///あまいミツ
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///きちょうなホネ
+        ///ひかりのいし
+        ///やみのいし
+        ///めざめいし
+        ///まんまるいし
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        /// [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string items_ja {
+            get {
+                return ResourceManager.GetString("items_ja", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to (없음)
+        ///마스터볼
+        ///하이퍼볼
+        ///슈퍼볼
+        ///몬스터볼
+        ///사파리볼
+        ///네트볼
+        ///다이브볼
+        ///네스트볼
+        ///리피트볼
+        ///타이머볼
+        ///럭셔리볼
+        ///프리미어볼
+        ///다크볼
+        ///힐볼
+        ///퀵볼
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///회복약
+        ///풀회복약
+        ///고급상처약
+        ///좋은상처약
+        ///만병통치제
+        ///기력의조각
+        ///기력의덩어리
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///PP에이드
+        ///PP회복
+        ///PP에이더
+        ///PP맥스
+        ///
+        ///
+        ///
+        ///맥스업
+        ///타우린
+        ///사포닌
+        ///알칼로이드
+        ///리보플라빈
+        ///
+        ///포인트업
+        ///키토산
+        ///포인트맥스
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///태양의돌
+        ///달의돌
+        ///불꽃의돌
+        ///천둥의돌
+        ///물의돌
+        ///리프의돌
+        ///작은버섯
+        ///큰버섯
+        ///진주
+        ///큰진주
+        ///별의모래
+        ///별의조각
+        ///금구슬
+        ///
+        ///달콤한꿀
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///귀중한뼈
+        ///빛의돌
+        ///어둠의돌
+        ///각성의돌
+        ///동글동글돌
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///왕의징표석
+        ///은빛가루
+        ///부적금화
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///변함없는돌
+        ///기합의머리띠
+        ///행복의알
+        ///초점렌즈
+        ///금속코트
+        ///먹다남은음식
+        ///용의비늘
+        ///
+        ///부드러운모래
+        ///딱딱한돌
+        ///기적의씨
+        ///검은안 [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string items_ko {
+            get {
+                return ResourceManager.GetString("items_ko", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to (无)
+        ///大师球
+        ///高级球
+        ///超级球
+        ///精灵球
+        ///狩猎球
+        ///捕网球
+        ///潜水球
+        ///巢穴球
+        ///重复球
+        ///计时球
+        ///豪华球
+        ///纪念球
+        ///黑暗球
+        ///治愈球
+        ///先机球
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///全复药
+        ///全满药
+        ///厉害伤药
+        ///好伤药
+        ///万灵药
+        ///活力碎片
+        ///活力块
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///ＰＰ单项小补剂
+        ///ＰＰ单项全补剂
+        ///ＰＰ多项小补剂
+        ///ＰＰ多项全补剂
+        ///
+        ///
+        ///
+        ///ＨＰ增强剂
+        ///攻击增强剂
+        ///防御增强剂
+        ///速度增强剂
+        ///特攻增强剂
+        ///
+        ///ＰＰ提升剂
+        ///特防增强剂
+        ///ＰＰ极限提升剂
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///日之石
+        ///月之石
+        ///火之石
+        ///雷之石
+        ///水之石
+        ///叶之石
+        ///小蘑菇
+        ///大蘑菇
+        ///珍珠
+        ///大珍珠
+        ///星星沙子
+        ///星星碎片
+        ///金珠
+        ///
+        ///甜甜蜜
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///贵重骨头
+        ///光之石
+        ///暗之石
+        ///觉醒之石
+        ///浑圆之石
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///王者之证
+        ///银粉
+        ///护符金币
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///不变之石
+        ///气势头带
+        ///幸运蛋
+        ///焦点镜
+        ///金属膜
+        ///吃剩的东西
+        ///龙之鳞片
+        ///
+        ///柔软沙子
+        ///硬石头
+        ///奇迹种子
+        ///黑色眼镜
+        ///黑带
+        ///磁铁
+        ///神秘水滴
+        ///锐利鸟嘴
+        ///毒针
+        /// [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string items_zh {
+            get {
+                return ResourceManager.GetString("items_zh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to (無)
+        ///大師球
+        ///高級球
+        ///超級球
+        ///精靈球
+        ///狩獵球
+        ///捕網球
+        ///潛水球
+        ///巢穴球
+        ///重複球
+        ///計時球
+        ///豪華球
+        ///紀念球
+        ///黑暗球
+        ///治癒球
+        ///先機球
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///全復藥
+        ///全滿藥
+        ///厲害傷藥
+        ///好傷藥
+        ///萬靈藥
+        ///活力碎片
+        ///活力塊
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///ＰＰ單項小補劑
+        ///ＰＰ單項全補劑
+        ///ＰＰ多項小補劑
+        ///ＰＰ多項全補劑
+        ///
+        ///
+        ///
+        ///ＨＰ增強劑
+        ///攻擊增強劑
+        ///防禦增強劑
+        ///速度增強劑
+        ///特攻增強劑
+        ///
+        ///ＰＰ提升劑
+        ///特防增強劑
+        ///ＰＰ極限提升劑
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///日之石
+        ///月之石
+        ///火之石
+        ///雷之石
+        ///水之石
+        ///葉之石
+        ///小蘑菇
+        ///大蘑菇
+        ///珍珠
+        ///大珍珠
+        ///星星沙子
+        ///星星碎片
+        ///金珠
+        ///
+        ///甜甜蜜
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///貴重骨頭
+        ///光之石
+        ///暗之石
+        ///覺醒之石
+        ///渾圓之石
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///王者之證
+        ///銀粉
+        ///護符金幣
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///不變之石
+        ///氣勢頭帶
+        ///幸運蛋
+        ///焦點鏡
+        ///金屬膜
+        ///吃剩的東西
+        ///龍之鱗片
+        ///
+        ///柔軟沙子
+        ///硬石頭
+        ///奇跡種子
+        ///黑色眼鏡
+        ///黑帶
+        ///磁鐵
+        ///神秘水滴
+        ///銳利鳥嘴
+        ///毒針
+        /// [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string items_zh2 {
+            get {
+                return ResourceManager.GetString("items_zh2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
         internal static byte[] special_item_table_array {

@@ -1,5 +1,4 @@
 using ItemPrinterDeGacha.Core;
-using PKHeX.Core;
 
 namespace ItemPrinterDeGacha.WinForms.Controls;
 
@@ -11,11 +10,9 @@ public partial class ModeSearch : UserControl
     {
         InitializeComponent();
         CB_Mode.SelectedIndex = 1; // Default to BallBonus
+        CB_Count.SelectedIndex = 0; // Default to 1
 
-        var items = GameInfo.ItemDataSource
-            .Where(z => ItemPrinter.IsInTable(z.Value, Mode) || z.Value == 0)
-            .ToArray();
-
+        var items = ComboItem.GetList(ItemPrinter.Items);
         CB_Item.InitializeBinding();
         CB_Item.DataSource = new BindingSource(items, null);
         CB_Item.SelectedValue = 0;
@@ -43,7 +40,8 @@ public partial class ModeSearch : UserControl
         var ticks = seed;
         var currentSeconds = TimeUtil.GetDateTime(ticks).Second;
         ticks -= (ulong)currentSeconds;
-        Span<Item> tmp = stackalloc Item[1];
+        int jobs = int.Parse(CB_Count.Text);
+        Span<Item> tmp = stackalloc Item[jobs];
         while (true)
         {
             for (uint i = min; i <= max; i++)
@@ -63,7 +61,7 @@ public partial class ModeSearch : UserControl
                 var dateTime = TimeUtil.GetDateTime(check);
                 var time = dateTime.ToString(Program.TimeFormat);
                 var result = $"{mode} @ {time} -- {check}";
-                    result += $" -- with x{first.Count} {GameInfo.Strings.Item[first.ItemId]}!";
+                    result += $" -- with x{first.Count} {GameStrings.GetItemName(first.ItemId)}!";
                 RTB_Result.Text = result;
                 return;
             }

@@ -1,5 +1,4 @@
 using ItemPrinterDeGacha.Core;
-using PKHeX.Core;
 using System.Text;
 
 namespace ItemPrinterDeGacha.WinForms.Controls;
@@ -12,10 +11,9 @@ public partial class BallSearch : UserControl
     {
         InitializeComponent();
         CB_Seek.SelectedIndex = 0;
+        CB_Count.SelectedIndex = CB_Count.Items.Count - 1; // Default to 10
 
-        var items = GameInfo.ItemDataSource
-            .Where(z => ItemPrinter.IsInTable(z.Value, Mode))
-            .ToArray();
+        var items = ComboItem.GetList(ItemPrinter.Balls);
 
         CB_Item.InitializeBinding();
         CB_Item.DataSource = new BindingSource(items, null);
@@ -43,7 +41,7 @@ public partial class BallSearch : UserControl
 
         var ticks = seed;
 
-        const int jobs = 10;
+        int jobs = int.Parse(CB_Count.Text);
         Span<Item> tmp = stackalloc Item[jobs];
 
         var count = (uint)NUD_Seconds.Value;
@@ -52,13 +50,13 @@ public partial class BallSearch : UserControl
         {
             if (search == SearchMode.MaxItem)
             {
-                (ulong t, int c) = ItemPrinter.MaxResultsAny(ticks, ticks + count, tmp, Mode, item);
+                (ulong t, int c) = SeedSearch.MaxResultsAny(ticks, ticks + count, tmp, Mode, item);
                 Populate(t, tmp);
                 RTB_Result.Text += $"{Environment.NewLine}Count: {c}";
             }
             else
             {
-                (ulong t, int c) = ItemPrinter.MaxResultsAnyBall(ticks, ticks + count, tmp);
+                (ulong t, int c) = SeedSearch.MaxResultsAnyBall(ticks, ticks + count, tmp);
                 Populate(t, tmp);
                 RTB_Result.Text += $"{Environment.NewLine}Count: {c}";
             }
@@ -152,9 +150,8 @@ public partial class BallSearch : UserControl
     private static string GetResultString(Span<Item> items)
     {
         var lines = new StringBuilder(256);
-        var names = GameInfo.Strings.Item;
         foreach (var item in items)
-            lines.AppendLine($"x{item.Count} {names[item.ItemId]}");
+            lines.AppendLine($"x{item.Count} {GameStrings.GetItemName(item.ItemId)}");
         return lines.ToString();
     }
 

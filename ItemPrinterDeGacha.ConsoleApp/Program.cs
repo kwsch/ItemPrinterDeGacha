@@ -15,7 +15,7 @@ if (mode == 0)
     if (int.TryParse(Console.ReadLine(), out int targetMode) && targetMode is >= 1 and <= 2)
     {
         ulong ticks = PromptTime();
-        var result = ItemPrinter.FindNextBonusMode(ticks, (PrintMode)targetMode);
+        var result = SeedSearch.FindNextBonusMode(ticks, (PrintMode)targetMode);
         Console.WriteLine($"Next {(PrintMode)targetMode} mode: {TimeUtil.GetDateTime(result)}");
     }
     return;
@@ -25,7 +25,7 @@ Console.WriteLine("Enter item ID:");
 if (ushort.TryParse(Console.ReadLine(), out ushort itemId))
 {
     ulong ticks = PromptTime();
-    var result = mode == 1 ? ItemPrinter.FindNextItemBonus(ticks, itemId) : ItemPrinter.FindNextBall(ticks, itemId);
+    var result = mode == 1 ? SeedSearch.FindNextItemBonus(ticks, itemId) : SeedSearch.FindNextBall(ticks, itemId);
     Console.WriteLine($"Next {(PrintMode)mode} mode for item {itemId}: {TimeUtil.GetDateTime(result)}");
 }
 
