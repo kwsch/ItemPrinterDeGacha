@@ -1,9 +1,9 @@
 ﻿{
-  "ErrorMinMax": "Min must be less than or equal to Max.",
-  "ErrorNoItem": "No item specified",
-  "ErrorInvalidSearchCriteria": "Invalid search criteria.",
-  "F1_Count": "Count: {0}",
-  "F1_Time": "Time: {0}",
+  "ErrorMinMax": "最小值必须小于或等于最大值.",
+  "ErrorNoItem": "没有指定道具",
+  "ErrorInvalidSearchCriteria": "无效的搜索条件.",
+  "F1_Count": "数量: {0}",
+  "F1_Time": "目标时间: {0}",
   "F1_Seed": "Seed: {0}",
   "F2_CountItem": "x{0} {1}",
   "F3_ModeAtTimeSeed": "{0} @ {1} -- {2}"
