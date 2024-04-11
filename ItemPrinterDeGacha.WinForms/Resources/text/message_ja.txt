@@ -1,9 +1,9 @@
-﻿{
-  "ErrorMinMax": "Min must be less than or equal to Max.",
-  "ErrorNoItem": "No item specified",
-  "ErrorInvalidSearchCriteria": "Invalid search criteria.",
+{
+  "ErrorMinMax": "上限値は下限値を下回ってはいけません",
+  "ErrorNoItem": "アイテムが指定されていません",
+  "ErrorInvalidSearchCriteria": "検索条件が不正です",
   "F1_Count": "Count: {0}",
-  "F1_Time": "Time: {0}",
+  "F1_Time": "時刻: {0}",
   "F1_Seed": "Seed: {0}",
   "F2_CountItem": "x{0} {1}",
   "F3_ModeAtTimeSeed": "{0} @ {1} -- {2}"
