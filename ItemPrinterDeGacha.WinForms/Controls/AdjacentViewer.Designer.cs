@@ -124,17 +124,16 @@ namespace ItemPrinterDeGacha.WinForms.Controls
             // 
             CB_Mode.DropDownStyle = ComboBoxStyle.DropDownList;
             CB_Mode.FormattingEnabled = true;
-            CB_Mode.Items.AddRange(new object[] { "Regular", "ItemBonus", "BallBonus" });
-            CB_Mode.Location = new Point(335, 6);
+            CB_Mode.Location = new Point(315, 6);
             CB_Mode.Name = "CB_Mode";
-            CB_Mode.Size = new Size(92, 23);
+            CB_Mode.Size = new Size(112, 23);
             CB_Mode.TabIndex = 1;
             // 
             // L_Mode
             // 
             L_Mode.Location = new Point(237, 4);
             L_Mode.Name = "L_Mode";
-            L_Mode.Size = new Size(92, 24);
+            L_Mode.Size = new Size(72, 24);
             L_Mode.TabIndex = 10;
             L_Mode.Text = "Mode:";
             L_Mode.TextAlign = ContentAlignment.MiddleRight;
@@ -143,7 +142,7 @@ namespace ItemPrinterDeGacha.WinForms.Controls
             // 
             L_Seed.Location = new Point(237, 31);
             L_Seed.Name = "L_Seed";
-            L_Seed.Size = new Size(92, 24);
+            L_Seed.Size = new Size(72, 24);
             L_Seed.TabIndex = 11;
             L_Seed.Text = "Seed:";
             L_Seed.TextAlign = ContentAlignment.MiddleRight;
@@ -151,7 +150,7 @@ namespace ItemPrinterDeGacha.WinForms.Controls
             // MTB_Seed
             // 
             MTB_Seed.Font = new Font("Courier New", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            MTB_Seed.Location = new Point(335, 33);
+            MTB_Seed.Location = new Point(315, 33);
             MTB_Seed.Mask = "0000000000";
             MTB_Seed.Name = "MTB_Seed";
             MTB_Seed.Size = new Size(78, 21);

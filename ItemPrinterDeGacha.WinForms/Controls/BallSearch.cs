@@ -1,4 +1,5 @@
 using ItemPrinterDeGacha.Core;
+using static ItemPrinterDeGacha.WinForms.SearchModeBall;
 
 namespace ItemPrinterDeGacha.WinForms.Controls;
 
@@ -9,6 +10,7 @@ public partial class BallSearch : UserControl
     public BallSearch()
     {
         InitializeComponent();
+        CB_Seek.Items.AddRange(Program.Localization.LocalizeEnum<SearchModeBall>());
         CB_Seek.SelectedIndex = 0;
         CB_Count.SelectedIndex = CB_Count.Items.Count - 1; // Default to 10
 
@@ -36,7 +38,7 @@ public partial class BallSearch : UserControl
         }
 
         var item = WinFormsUtil.GetIndex(CB_Item);
-        var search = (SearchMode)CB_Seek.SelectedIndex;
+        var search = (SearchModeBall)CB_Seek.SelectedIndex;
 
         var ticks = seed;
 
@@ -47,88 +49,104 @@ public partial class BallSearch : UserControl
 
         if (min == 0 && max == 59)
         {
-            if (search == SearchMode.MaxItem)
-            {
-                (ulong t, int c) = SeedSearch.MaxResultsAny(ticks, ticks + count, tmp, Mode, item);
-                Populate(t, tmp);
-                RTB_Result.Text += Environment.NewLine +
-                                   string.Format(Program.Localization.F1_Count, c);
-            }
+            if (search == MaxSpecificItem)
+                SearchAnyTimeSpecificItem(ticks, count, tmp, item);
+            else if (search == MaxValuables)
+                SearchAnyTimeValuables(ticks, count, tmp);
             else
-            {
-                (ulong t, int c) = SeedSearch.MaxResultsAnyBall(ticks, ticks + count, tmp);
-                Populate(t, tmp);
-                RTB_Result.Text += Environment.NewLine +
-                                   string.Format(Program.Localization.F1_Count, c);
-            }
-
-            return;
-        }
-
-        var currentSeconds = TimeUtil.GetDateTime(ticks).Second;
-        ticks -= (ulong)currentSeconds;
-        if (search == SearchMode.MaxItem)
-        {
-            if (item == 0)
-            {
-                Populate(Program.Localization.ErrorNoItem);
-                return;
-            }
-
-            int c = -1;
-            ulong result = 0;
-            do
-            {
-                for (uint i = min; i <= max; i++)
-                {
-                    var check = ticks + i;
-                    _ = ItemPrinter.Print(check, tmp, Mode);
-                    int qty = 0;
-                    foreach (var it in tmp)
-                    {
-                        if (it.ItemId == item)
-                            qty += it.Count;
-                    }
-
-                    if (qty <= c)
-                        continue;
-                    c = qty;
-                    result = check;
-                }
-
-                ticks += 60;
-            }
-            while (ticks - seed < count);
-            Populate(result, tmp.Length);
+                Populate(Program.Localization.ErrorInvalidSearchCriteria);
         }
         else
         {
-            int c = -1;
-            ulong result = 0;
-            do
-            {
-                for (uint i = min; i <= max; i++)
-                {
-                    var check = ticks + i;
-                    _ = ItemPrinter.Print(check, tmp, Mode);
-                    int qty = 0;
-                    foreach (var it in tmp)
-                    {
-                        if (it.Count == 1)
-                            qty++;
-                    }
+            var currentSeconds = TimeUtil.GetDateTime(ticks).Second;
+            ticks -= (ulong)currentSeconds;
+            if (search == MaxSpecificItem)
+                SearchSpecificItem(item, min, max, ticks, tmp, seed, count);
+            else if (search == MaxValuables)
+                SearchValuables(min, max, ticks, tmp, seed, count);
+            else
+                Populate(Program.Localization.ErrorInvalidSearchCriteria);
+        }
+    }
 
-                    if (qty <= c)
-                        continue;
-                    c = qty;
-                    result = check;
+    private void SearchAnyTimeSpecificItem(ulong ticks, uint count, Span<Item> tmp, int item)
+    {
+        (ulong t, int c) = SeedSearch.MaxResultsAny(ticks, ticks + count, tmp, Mode, item);
+        Populate(t, tmp);
+        RTB_Result.Text += Environment.NewLine +
+                           string.Format(Program.Localization.F1_Count, c);
+    }
+
+    private void SearchAnyTimeValuables(ulong ticks, uint count, Span<Item> tmp)
+    {
+        (ulong t, int c) = SeedSearch.MaxResultsAnyBall(ticks, ticks + count, tmp);
+        Populate(t, tmp);
+        RTB_Result.Text += Environment.NewLine +
+                           string.Format(Program.Localization.F1_Count, c);
+    }
+
+    private void SearchSpecificItem(int item, uint min, uint max, ulong ticks, Span<Item> tmp, ulong seed, uint count)
+    {
+        if (item == 0)
+        {
+            Populate(Program.Localization.ErrorNoItem);
+            return;
+        }
+
+        int c = -1;
+        ulong result = 0;
+        do
+        {
+            for (uint i = min; i <= max; i++)
+            {
+                var check = ticks + i;
+                _ = ItemPrinter.Print(check, tmp, Mode);
+                int qty = 0;
+                foreach (var it in tmp)
+                {
+                    if (it.ItemId == item)
+                        qty += it.Count;
                 }
 
-                ticks += 60;
+                if (qty <= c)
+                    continue;
+                c = qty;
+                result = check;
             }
-            while (ticks - seed < count);
-            Populate(result, tmp.Length);
+
+            ticks += 60;
         }
+        while (ticks - seed < count);
+        Populate(result, tmp.Length);
+    }
+
+    private void SearchValuables(uint min, uint max, ulong ticks, Span<Item> tmp, ulong seed, uint count)
+    {
+        int c = -1;
+        ulong result = 0;
+        do
+        {
+            for (uint i = min; i <= max; i++)
+            {
+                var check = ticks + i;
+                _ = ItemPrinter.Print(check, tmp, Mode);
+                int qty = 0;
+                foreach (var it in tmp)
+                {
+                    if (it.Count == 1)
+                        qty++;
+                }
+
+                if (qty <= c)
+                    continue;
+                c = qty;
+                result = check;
+            }
+
+            ticks += 60;
+        }
+        while (ticks - seed < count);
+        Populate(result, tmp.Length);
     }
 
     private void Populate(ulong result, int count)
@@ -153,11 +171,5 @@ public partial class BallSearch : UserControl
     private void CB_Seek_SelectedIndexChanged(object sender, EventArgs e)
     {
         L_Item.Visible = CB_Item.Visible = CB_Seek.SelectedIndex == 0;
-    }
-
-    public enum SearchMode
-    {
-        MaxItem = 0,
-        MaxValue = 1,
     }
 }

@@ -9,6 +9,7 @@ public partial class RegularSearch : UserControl
     public RegularSearch()
     {
         InitializeComponent();
+        CB_Seek.Items.AddRange(Program.Localization.LocalizeEnum<SearchModeRegular>());
         CB_Seek.SelectedIndex = 0;
         CB_Count.SelectedIndex = CB_Count.Items.Count - 1; // Default to 10
 
@@ -35,7 +36,7 @@ public partial class RegularSearch : UserControl
         }
 
         var item = WinFormsUtil.GetIndex(CB_Item);
-        var search = (SearchMode)CB_Seek.SelectedIndex;
+        var search = (SearchModeRegular)CB_Seek.SelectedIndex;
 
         var ticks = seed;
 
@@ -46,7 +47,7 @@ public partial class RegularSearch : UserControl
 
         if (min == 0 && max == 59)
         {
-            if (search == SearchMode.MaxItem)
+            if (search == SearchModeRegular.MaxSpecificItem)
             {
                 (ulong t, int c) = SeedSearch.MaxResultsAny(ticks, ticks + count, tmp, Mode, item);
                 Populate(t, tmp);
@@ -57,7 +58,7 @@ public partial class RegularSearch : UserControl
 
         var currentSeconds = TimeUtil.GetDateTime(ticks).Second;
         ticks -= (ulong)currentSeconds;
-        if (search == SearchMode.MaxItem)
+        if (search == SearchModeRegular.MaxSpecificItem)
         {
             if (item == 0)
             {
@@ -112,11 +113,5 @@ public partial class RegularSearch : UserControl
     {
         RTB_Result.Text = result;
         System.Media.SystemSounds.Beep.Play();
-    }
-
-    public enum SearchMode
-    {
-        MaxItem = 0,
-        MaxValue = 1,
     }
 }

@@ -9,6 +9,7 @@ public partial class ModeSearch : UserControl
     public ModeSearch()
     {
         InitializeComponent();
+        CB_Mode.Items.AddRange(Program.Localization.LocalizeEnum<PrintMode>()[1..]); // Skip Regular
         CB_Mode.SelectedIndex = 1; // Default to BallBonus
         CB_Count.SelectedIndex = 0; // Default to 1
 

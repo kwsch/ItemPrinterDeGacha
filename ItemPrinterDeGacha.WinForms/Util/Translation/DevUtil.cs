@@ -1,3 +1,5 @@
+using ItemPrinterDeGacha.Core;
+
 #if DEBUG
 
 namespace ItemPrinterDeGacha.WinForms;
@@ -5,7 +7,7 @@ namespace ItemPrinterDeGacha.WinForms;
 public static class DevUtil
 {
     private static readonly string[] Languages = ["ja", "fr", "it", "de", "es", "ko", "zh", "zh2"];
-    private const string DefaultLanguage = Core.GameStrings.DefaultLanguage;
+    private const string DefaultLanguage = GameStrings.DefaultLanguage;
 
     public static bool IsUpdatingTranslations { get; private set; }
 
@@ -36,6 +38,9 @@ public static class DevUtil
         static void DumpMessageSettings(ReadOnlySpan<char> language, string resultDir)
         {
             var loc = Localization.Load(language);
+            loc.LocalizeEnum<PrintMode>();
+            loc.LocalizeEnum<SearchModeRegular>();
+            loc.LocalizeEnum<SearchModeBall>();
             loc.Save(resultDir, language);
         }
     }

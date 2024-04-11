@@ -6,5 +6,13 @@
   "F1_Time": "Time: {0}",
   "F1_Seed": "Seed: {0}",
   "F2_CountItem": "x{0} {1}",
-  "F3_ModeAtTimeSeed": "{0} @ {1} -- {2}"
+  "F3_ModeAtTimeSeed": "{0} @ {1} -- {2}",
+  "Others": {
+    "PrintMode.Regular": "Regular",
+    "PrintMode.ItemBonus": "ItemBonus",
+    "PrintMode.BallBonus": "BallBonus",
+    "SearchModeRegular.MaxSpecificItem": "MaxSpecificItem",
+    "SearchModeBall.MaxSpecificItem": "MaxSpecificItem",
+    "SearchModeBall.MaxValuables": "MaxValuables"
+  }
 }

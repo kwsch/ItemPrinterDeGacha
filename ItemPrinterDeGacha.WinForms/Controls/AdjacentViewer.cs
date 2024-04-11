@@ -7,8 +7,9 @@ namespace ItemPrinterDeGacha.WinForms.Controls
         public AdjacentViewer()
         {
             InitializeComponent();
+            CB_Mode.Items.AddRange(Program.Localization.LocalizeEnum<PrintMode>());
             CB_Mode.SelectedIndex = 2; // Ball
-            CB_Count.SelectedIndex = CB_Count.Items.Count - 1;
+            CB_Count.SelectedIndex = CB_Count.Items.Count - 1; // Default to 10
             CB_Mode.SelectedIndexChanged += (_, _) => TryPrint();
             CB_Count.SelectedIndexChanged += (_, _) => TryPrint();
         }
