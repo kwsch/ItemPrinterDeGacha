@@ -53,26 +53,28 @@ namespace ItemPrinterDeGacha.WinForms.Controls
             // 
             // Count
             // 
+            Count.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
             Count.DefaultCellStyle = dataGridViewCellStyle1;
             Count.HeaderText = "Count";
             Count.Name = "Count";
             Count.ReadOnly = true;
-            Count.Width = 50;
+            Count.Width = 65;
             // 
             // IMG
             // 
+            IMG.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             IMG.HeaderText = "IMG";
             IMG.Name = "IMG";
             IMG.ReadOnly = true;
-            IMG.Width = 40;
+            IMG.Width = 35;
             // 
             // ItemName
             // 
+            ItemName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             ItemName.HeaderText = "Name";
             ItemName.Name = "ItemName";
             ItemName.ReadOnly = true;
-            ItemName.Width = 140;
             // 
             // ItemResultGridView
             // 
