@@ -85,6 +85,8 @@ public partial class ModeSearch : UserControl
             if (adj != mode)
                 return false;
         }
+        // Since `tmp` contains the result at +2sec, recalculate the result for +/- 0.
+        ItemPrinter.Print(check, tmp, Mode);
         return true;
     }
 }
