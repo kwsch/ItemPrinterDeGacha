@@ -1,4 +1,4 @@
-{
+﻿{
   "ErrorMinMax": "Min must be less than or equal to Max.",
   "ErrorNoItem": "No item specified",
   "ErrorInvalidSearchCriteria": "Invalid search criteria.",

@@ -1,4 +1,4 @@
-Main=ItemPrinterDeGacha
+﻿Main=ItemPrinterDeGacha
 Main.B_AddOne=+1
 Main.B_MinusOne=-1
 Main.B_Search=Search

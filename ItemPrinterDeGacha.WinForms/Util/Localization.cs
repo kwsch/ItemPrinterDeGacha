@@ -1,3 +1,4 @@
+using System.Text;
 using System.Text.Json;
 
 namespace ItemPrinterDeGacha.WinForms;
@@ -40,7 +41,7 @@ public sealed class Localization
     {
         var fileName = GetResourceName(language) + ".txt";
         var text = JsonSerializer.Serialize(this, Options);
-        File.WriteAllText(Path.Combine(path, fileName), text);
+        File.WriteAllText(Path.Combine(path, fileName), text, Encoding.UTF8);
     }
 
 #endif

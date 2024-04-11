@@ -1,5 +1,6 @@
 using System.Globalization;
 using System.Reflection;
+using System.Text;
 using System.Text.Json;
 using ItemPrinterDeGacha.Core;
 
@@ -57,31 +58,30 @@ internal static class Program
     {
         var path = SettingsPath;
         var text = JsonSerializer.Serialize(Settings, Options);
-        File.WriteAllText(path, text);
+        File.WriteAllText(path, text, Encoding.UTF8);
     }
 
     private const string BuildVersionMetadataPrefix = "+";
     private const string dateFormat = "yyMMddHHmmss";
 
-    public static DateTime GetLinkerTime(Assembly assembly)
+    public static DateTime? GetLinkerTime(Assembly assembly)
     {
         var attribute = assembly
             .GetCustomAttribute<AssemblyInformationalVersionAttribute>();
 
-        if (attribute?.InformationalVersion != null)
-        {
-            var value = attribute.InformationalVersion;
-            var index = value.IndexOf(BuildVersionMetadataPrefix, StringComparison.OrdinalIgnoreCase);
-            if (index > 0)
-            {
-                value = value[(index + BuildVersionMetadataPrefix.Length)..];
+        if (attribute?.InformationalVersion == null)
+            return default;
 
-                return DateTime.ParseExact(
-                    value,
-                    dateFormat,
-                    CultureInfo.InvariantCulture);
-            }
-        }
-        return default;
+        var value = attribute.InformationalVersion;
+        var index = value.IndexOf(BuildVersionMetadataPrefix, StringComparison.OrdinalIgnoreCase);
+        if (index <= 0)
+            return default;
+
+        value = value[(index + BuildVersionMetadataPrefix.Length)..];
+
+        return DateTime.ParseExact(
+            value,
+            dateFormat,
+            CultureInfo.InvariantCulture);
     }
 }

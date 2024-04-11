@@ -1,3 +1,5 @@
+using System.Text;
+
 namespace ItemPrinterDeGacha.WinForms;
 
 public static class WinFormsTranslator
@@ -249,7 +251,7 @@ public static class WinFormsTranslator
             var fn = GetTranslationFileNameExternal(lang);
             var lines = File.ReadAllLines(fn);
             var result = lines.Where(l => !split.Any(s => l.StartsWith(s + TranslationContext.Separator)));
-            File.WriteAllLines(fn, result);
+            File.WriteAllLines(fn, result, Encoding.UTF8);
         }
     }
 

@@ -21,7 +21,8 @@ public sealed partial class Main : Form
 #endif
 
         var buildTime = Program.GetLinkerTime(Assembly.GetExecutingAssembly());
-        Text = $"{Text} - {buildTime:yyyy-MM-dd HH:mm:ss}";
+        if (buildTime != default)
+            Text = $"{Text} - {buildTime:yyyy-MM-dd HH:mm:ss}";
     }
 
     private void ChangeSelectedTab(object sender, EventArgs e)
