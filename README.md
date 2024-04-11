@@ -22,8 +22,6 @@ The program saves a `settings.json` next to the executable when opening/closing.
 * "zh" = Chinese (Simplified)
 * "zh2" = Chinese (Traditional)
 
-Currently, only Item Names are localized; no GUI/message localization. The program is still usable since the main interest is in items and datetime seeds.
-
 Additionally, the setting can be changed from the default `"yyyy-MM-dd HH:mm:ss"` to any valid date-time formatter to change how datetime values are displayed. `""` will use the computer's current culture formatting. Time Zones are irrelevant; when using a seed, the console seeds the RNG based on the console's local time (seconds) elapsed since 1970.
 
 ## Building
