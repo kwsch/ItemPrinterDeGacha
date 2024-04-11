@@ -138,8 +138,8 @@ namespace ItemPrinterDeGacha.WinForms
             // 
             // Main
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleMode = AutoScaleMode.Dpi;
             ClientSize = new Size(723, 427);
             Controls.Add(tabControl1);
             FormBorderStyle = FormBorderStyle.FixedSingle;

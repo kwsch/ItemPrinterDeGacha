@@ -5,6 +5,8 @@ public sealed partial class Main : Form
     public Main()
     {
         InitializeComponent();
+        if (Program.Settings.DisableDpiScaling) // Set back to Font
+            AutoScaleMode = AutoScaleMode.Font;
         this.TranslateInterface(Program.Settings.Language);
         Hide();
         BringToFront();

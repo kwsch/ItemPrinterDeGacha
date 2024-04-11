@@ -167,8 +167,8 @@ namespace ItemPrinterDeGacha.WinForms.Controls
             // 
             // AdjacentViewer
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleMode = AutoScaleMode.Inherit;
+            AutoSizeMode = AutoSizeMode.GrowAndShrink;
             Controls.Add(CB_Count);
             Controls.Add(MTB_Seed);
             Controls.Add(L_Seed);

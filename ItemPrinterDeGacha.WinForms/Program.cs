@@ -42,7 +42,7 @@ internal static class Program
         if (File.Exists(path))
         {
             var json = File.ReadAllText(path);
-            Settings = JsonSerializer.Deserialize<ProgramSettings>(json)!;
+            Settings = JsonSerializer.Deserialize<ProgramSettings>(json, Options)!;
         }
         else
         {

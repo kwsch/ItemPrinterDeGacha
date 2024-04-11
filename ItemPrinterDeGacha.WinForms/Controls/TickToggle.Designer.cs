@@ -83,8 +83,8 @@
             // 
             // TickToggle
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleMode = AutoScaleMode.Inherit;
+            AutoSizeMode = AutoSizeMode.GrowAndShrink;
             Controls.Add(GB_Time);
             Name = "TickToggle";
             Size = new Size(112, 83);

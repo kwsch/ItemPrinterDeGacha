@@ -76,8 +76,8 @@ namespace ItemPrinterDeGacha.WinForms.Controls
             // 
             // ItemResultGridView
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleMode = AutoScaleMode.Inherit;
+            AutoSizeMode = AutoSizeMode.GrowAndShrink;
             Controls.Add(DGV_View);
             Name = "ItemResultGridView";
             Size = new Size(235, 250);
