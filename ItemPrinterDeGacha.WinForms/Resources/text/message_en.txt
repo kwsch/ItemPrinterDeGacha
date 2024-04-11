@@ -13,6 +13,6 @@
     "PrintMode.BallBonus": "BallBonus",
     "SearchModeRegular.MaxSpecificItem": "MaxSpecificItem",
     "SearchModeBall.MaxSpecificItem": "MaxSpecificItem",
-    "SearchModeBall.MaxValuables": "MaxValuablesABCD"
+    "SearchModeBall.MaxValuables": "MaxValuables"
   }
 }
