@@ -9,6 +9,7 @@
     <PackageId>ItemPrinterDeGacha</PackageId>
     <AssemblyName>ItemPrinterDeGacha</AssemblyName>
     <Description>Item Printer De-Randomizer</Description>
+    <ApplicationIcon>Resources\icon.ico</ApplicationIcon>
     <StartupObject>ItemPrinterDeGacha.WinForms.Program</StartupObject>
     <RootNamespace>ItemPrinterDeGacha.WinForms</RootNamespace>
   </PropertyGroup>
