@@ -52,4 +52,34 @@ public static class TimeUtil
     /// Checks if the seed is within the valid range.
     /// </summary>
     public static bool IsValidSeed(ulong seed) => seed is >= MinSeed and <= MaxSeed;
+
+    /// <summary>
+    /// Clamps the start and end seed values to the valid range.
+    /// </summary>
+    public static void ClampStartEnd(ref ulong start, ref ulong end)
+    {
+        if (start > end) // Be nice and swap if max<min
+            (start, end) = (end, start);
+        if (start < MinSeed)
+            start = MinSeed;
+        if (end > MaxSeed)
+            end = MaxSeed;
+    }
+
+    /// <summary>
+    /// Clamps the start and additional-seconds to the valid range.
+    /// </summary>
+    /// <param name="seed">Seed to start from.</param>
+    /// <param name="count">Additional seconds to add to the seed.</param>
+    public static void ClampStartLength(ref ulong seed, ref uint count)
+    {
+        if (seed < MinSeed)
+            seed = MinSeed;
+        if (count == 0)
+            return; // 0 is a valid count; no further changes needed.
+
+        var max = seed + count;
+        if (max > MaxSeed || max < seed) // shouldn't overflow but check anyway
+            count = (uint)(MaxSeed - seed);
+    }
 }

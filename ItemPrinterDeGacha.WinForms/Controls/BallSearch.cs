@@ -39,13 +39,13 @@ public partial class BallSearch : UserControl
 
         var item = WinFormsUtil.GetIndex(CB_Item);
         var search = (SearchModeBall)CB_Seek.SelectedIndex;
+        var count = (uint)NUD_Seconds.Value;
 
         var ticks = seed;
+        TimeUtil.ClampStartLength(ref seed, ref count);
 
         int jobs = int.Parse(CB_Count.Text);
         Span<Item> tmp = stackalloc Item[jobs];
-
-        var count = (uint)NUD_Seconds.Value;
 
         if (min == 0 && max == 59)
         {
