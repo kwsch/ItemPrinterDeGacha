@@ -24,20 +24,24 @@ internal static class Program
 
     private static void Initialize()
     {
-        var lang = "en";
+        var lang = GameStrings.DefaultLanguage;
         if (Settings.Language.Length is 2 or 3)
             lang = Settings.Language;
         GameStrings.Initialize(lang);
         Localization.Initialize(lang);
     }
 
+    private static string StartupPath => Path.GetDirectoryName(Environment.ProcessPath)!;
+    private const string SettingsFile = "settings.json";
+    private static string SettingsPath => Path.Combine(StartupPath, SettingsFile);
     private static readonly JsonSerializerOptions Options = new() { WriteIndented = true };
 
     private static void DetectSettings()
     {
-        if (File.Exists("settings.json"))
+        var path = SettingsPath;
+        if (File.Exists(path))
         {
-            var json = File.ReadAllText("settings.json");
+            var json = File.ReadAllText(path);
             Settings = JsonSerializer.Deserialize<ProgramSettings>(json)!;
         }
         else
@@ -49,7 +53,8 @@ internal static class Program
 
     public static void SaveSettings()
     {
+        var path = SettingsPath;
         var text = JsonSerializer.Serialize(Settings, Options);
-        File.WriteAllText("settings.json", text);
+        File.WriteAllText(path, text);
     }
 }
