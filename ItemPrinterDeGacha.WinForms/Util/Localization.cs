@@ -32,9 +32,9 @@ public sealed class Localization
         return JsonSerializer.Deserialize<Localization>(text, Options)!;
     }
 
-#if DEBUG
-
     private static readonly JsonSerializerOptions Options = new() { WriteIndented = true, AllowTrailingCommas = true };
+
+#if DEBUG
 
     public void Save(string path, ReadOnlySpan<char> language)
     {

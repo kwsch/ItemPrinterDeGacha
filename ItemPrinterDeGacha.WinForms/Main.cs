@@ -1,3 +1,5 @@
+using System.Reflection;
+
 namespace ItemPrinterDeGacha.WinForms;
 
 public sealed partial class Main : Form
@@ -17,6 +19,9 @@ public sealed partial class Main : Form
         if (ModifierKeys == Keys.Shift)
             DevUtil.UpdateAll(); // Translations
 #endif
+
+        var buildTime = Program.GetLinkerTime(Assembly.GetExecutingAssembly());
+        Text = $"{Text} - {buildTime:yyyy-MM-dd HH:mm:ss}";
     }
 
     private void ChangeSelectedTab(object sender, EventArgs e)

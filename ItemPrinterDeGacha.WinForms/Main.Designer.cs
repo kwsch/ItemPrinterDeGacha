@@ -28,6 +28,7 @@ namespace ItemPrinterDeGacha.WinForms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             tabControl1 = new TabControl();
             Tab_Bonus = new TabPage();
             modeSearch1 = new Controls.ModeSearch();
@@ -130,6 +131,7 @@ namespace ItemPrinterDeGacha.WinForms
             // 
             // adjacentViewer1
             // 
+            adjacentViewer1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             adjacentViewer1.Dock = DockStyle.Fill;
             adjacentViewer1.Location = new Point(3, 3);
             adjacentViewer1.Name = "adjacentViewer1";
@@ -143,6 +145,7 @@ namespace ItemPrinterDeGacha.WinForms
             ClientSize = new Size(723, 427);
             Controls.Add(tabControl1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "Main";
             StartPosition = FormStartPosition.CenterScreen;
