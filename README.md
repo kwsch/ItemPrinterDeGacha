@@ -6,6 +6,7 @@ The game uses time_t to seed the RNG on first launch of the printer, for the res
 
 ## Screenshots
 
+![image](https://github.com/kwsch/ItemPrinterDeGacha/assets/6393368/675fcf6a-7075-4480-b3b5-65daf7edd95b)
 ![image](https://github.com/kwsch/ItemPrinterDeGacha/assets/6393368/855a3056-0506-4fe8-8660-60ab8300a8c1)
 
 ## Configuration
