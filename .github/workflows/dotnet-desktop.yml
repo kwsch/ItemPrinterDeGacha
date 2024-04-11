@@ -1,0 +1,44 @@
+name: .NET Desktop
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+    strategy:
+      matrix:
+        dotnet-version: [ '8.0.x' ]
+        configuration: [Release]
+
+    runs-on: windows-latest
+    env:
+      Solution_Name: ItemPrinterDeGacha.sln
+      Project_Path: ItemPrinterDeGacha.WinForms\ItemPrinterDeGacha.WinForms.csproj
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Setup dotnet
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: ${{ matrix.dotnet-version }}
+
+    - name: Setup MSBuild.exe
+      uses: microsoft/setup-msbuild@v2
+    - name: Restore the application
+      run: msbuild $env:Solution_Name /t:Restore /p:Configuration=$env:Configuration
+      env:
+        Configuration: ${{ matrix.configuration }}
+        
+    - name: Build
+      run: msbuild $env:Project_Path /p:Configuration=$env:Configuration
+      env:
+        Configuration: ${{ matrix.configuration }}
+    
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v4.3.1
+      with:
+        path: ItemPrinterDeGacha.WinForms\bin\Release
