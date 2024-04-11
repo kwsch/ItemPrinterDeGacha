@@ -28,25 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            groupBox1 = new GroupBox();
+            GB_Time = new GroupBox();
             TB_Time = new TextBox();
             RB_TimeSpecific = new RadioButton();
             RB_TimeCurrent = new RadioButton();
-            groupBox1.SuspendLayout();
+            GB_Time.SuspendLayout();
             SuspendLayout();
             // 
-            // groupBox1
+            // GB_Time
             // 
-            groupBox1.Controls.Add(TB_Time);
-            groupBox1.Controls.Add(RB_TimeSpecific);
-            groupBox1.Controls.Add(RB_TimeCurrent);
-            groupBox1.Dock = DockStyle.Fill;
-            groupBox1.Location = new Point(0, 0);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(112, 83);
-            groupBox1.TabIndex = 2;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Time";
+            GB_Time.Controls.Add(TB_Time);
+            GB_Time.Controls.Add(RB_TimeSpecific);
+            GB_Time.Controls.Add(RB_TimeCurrent);
+            GB_Time.Dock = DockStyle.Fill;
+            GB_Time.Location = new Point(0, 0);
+            GB_Time.Name = "GB_Time";
+            GB_Time.Size = new Size(112, 83);
+            GB_Time.TabIndex = 2;
+            GB_Time.TabStop = false;
+            GB_Time.Text = "Time";
             // 
             // TB_Time
             // 
@@ -85,17 +85,17 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(groupBox1);
+            Controls.Add(GB_Time);
             Name = "TickToggle";
             Size = new Size(112, 83);
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
+            GB_Time.ResumeLayout(false);
+            GB_Time.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private GroupBox groupBox1;
+        private GroupBox GB_Time;
         private TextBox TB_Time;
         private RadioButton RB_TimeSpecific;
         private RadioButton RB_TimeCurrent;

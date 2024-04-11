@@ -62,7 +62,7 @@ namespace ItemPrinterDeGacha.WinForms.Controls
             L_Seconds.Name = "L_Seconds";
             L_Seconds.Size = new Size(60, 24);
             L_Seconds.TabIndex = 18;
-            L_Seconds.Text = "Seconds";
+            L_Seconds.Text = "Seconds:";
             L_Seconds.TextAlign = ContentAlignment.MiddleRight;
             // 
             // NUD_Seconds
@@ -87,7 +87,6 @@ namespace ItemPrinterDeGacha.WinForms.Controls
             // 
             // B_Search
             // 
-            B_Search.BackColor = SystemColors.ActiveCaption;
             B_Search.Location = new Point(499, 8);
             B_Search.Name = "B_Search";
             B_Search.Size = new Size(132, 45);
@@ -107,7 +106,7 @@ namespace ItemPrinterDeGacha.WinForms.Controls
             // 
             // L_Item
             // 
-            L_Item.Location = new Point(121, 40);
+            L_Item.Location = new Point(121, 39);
             L_Item.Name = "L_Item";
             L_Item.Size = new Size(71, 24);
             L_Item.TabIndex = 24;
@@ -126,7 +125,7 @@ namespace ItemPrinterDeGacha.WinForms.Controls
             // 
             // L_Max
             // 
-            L_Max.Location = new Point(308, 40);
+            L_Max.Location = new Point(308, 39);
             L_Max.Name = "L_Max";
             L_Max.Size = new Size(96, 24);
             L_Max.TabIndex = 32;
@@ -163,7 +162,6 @@ namespace ItemPrinterDeGacha.WinForms.Controls
             // RTB_Result
             // 
             RTB_Result.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            RTB_Result.BackColor = SystemColors.Control;
             RTB_Result.Location = new Point(0, 95);
             RTB_Result.Name = "RTB_Result";
             RTB_Result.ReadOnly = true;
@@ -173,7 +171,7 @@ namespace ItemPrinterDeGacha.WinForms.Controls
             // 
             // L_Jobs
             // 
-            L_Jobs.Location = new Point(121, 66);
+            L_Jobs.Location = new Point(121, 65);
             L_Jobs.Name = "L_Jobs";
             L_Jobs.Size = new Size(71, 24);
             L_Jobs.TabIndex = 34;

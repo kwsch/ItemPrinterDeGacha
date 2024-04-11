@@ -1,5 +1,4 @@
 using ItemPrinterDeGacha.Core;
-using System.Text;
 
 namespace ItemPrinterDeGacha.WinForms.Controls;
 
@@ -26,7 +25,7 @@ public partial class BallSearch : UserControl
         var max = (uint)NUD_Max.Value;
         if (min > max)
         {
-            RTB_Result.Text = "Min must be less than or equal to Max.";
+            RTB_Result.Text = Program.Localization.ErrorMinMax;
             return;
         }
 
@@ -52,13 +51,15 @@ public partial class BallSearch : UserControl
             {
                 (ulong t, int c) = SeedSearch.MaxResultsAny(ticks, ticks + count, tmp, Mode, item);
                 Populate(t, tmp);
-                RTB_Result.Text += $"{Environment.NewLine}Count: {c}";
+                RTB_Result.Text += Environment.NewLine +
+                                   string.Format(Program.Localization.F1_Count, c);
             }
             else
             {
                 (ulong t, int c) = SeedSearch.MaxResultsAnyBall(ticks, ticks + count, tmp);
                 Populate(t, tmp);
-                RTB_Result.Text += $"{Environment.NewLine}Count: {c}";
+                RTB_Result.Text += Environment.NewLine +
+                                   string.Format(Program.Localization.F1_Count, c);
             }
 
             return;
@@ -70,7 +71,7 @@ public partial class BallSearch : UserControl
         {
             if (item == 0)
             {
-                Populate("No item specified");
+                Populate(Program.Localization.ErrorNoItem);
                 return;
             }
 
@@ -137,23 +138,7 @@ public partial class BallSearch : UserControl
         Populate(result, items);
     }
 
-    private void Populate(ulong result, Span<Item> items)
-    {
-        var time = TimeUtil.GetDateTime(result);
-        var text =
-            $"Time: {time.ToString(Program.TimeFormat)}{Environment.NewLine}" +
-            $"Seed: {result}{Environment.NewLine}" +
-            GetResultString(items);
-        Populate(text);
-    }
-
-    private static string GetResultString(Span<Item> items)
-    {
-        var lines = new StringBuilder(256);
-        foreach (var item in items)
-            lines.AppendLine($"x{item.Count} {GameStrings.GetItemName(item.ItemId)}");
-        return lines.ToString();
-    }
+    private void Populate(ulong result, Span<Item> items) => Populate(ItemUtil.GetTextResult(result, items));
 
     private void Populate(string result) => RTB_Result.Text = result;
 

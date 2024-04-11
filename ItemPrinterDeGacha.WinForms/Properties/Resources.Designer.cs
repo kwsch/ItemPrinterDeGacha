@@ -1619,5 +1619,447 @@ namespace ItemPrinterDeGacha.WinForms.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Main=ItemPrinterDeGacha
+        ///Main.B_AddOne=+1
+        ///Main.B_MinusOne=-1
+        ///Main.B_Search=Search
+        ///Main.CHK_PM2=Successful +/- 2
+        ///Main.GB_Time=Time
+        ///Main.L_0=0
+        ///Main.L_Item=Item:
+        ///Main.L_Jobs=Jobs:
+        ///Main.L_Max=Max Seconds:
+        ///Main.L_Min=Min Seconds:
+        ///Main.L_Mode=Mode:
+        ///Main.L_N1=-1
+        ///Main.L_P1=+1
+        ///Main.L_Seconds=Seconds:
+        ///Main.L_Seed=Seed:
+        ///Main.L_Seek=Seek:
+        ///Main.RB_TimeCurrent=Current Time
+        ///Main.RB_TimeSpecific=Specific Ticks
+        ///Main.Tab_Adjacent=Adjacent
+        ///Main.Tab_Ball=Ball
+        ///Main.Tab_Bonus=Bonus
+        ///Main.Tab_Regular=Regular [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string lang_de {
+            get {
+                return ResourceManager.GetString("lang_de", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Main=Test
+        ///Main.B_AddOne=+1
+        ///Main.B_MinusOne=-1
+        ///Main.B_Search=Search
+        ///Main.CHK_PM2=Successful +/- 2
+        ///Main.GB_Time=Time
+        ///Main.L_0=0
+        ///Main.L_Item=Item:
+        ///Main.L_Jobs=Jobs:
+        ///Main.L_Max=Max Seconds:
+        ///Main.L_Min=Min Seconds:
+        ///Main.L_Mode=Mode:
+        ///Main.L_N1=-1
+        ///Main.L_P1=+1
+        ///Main.L_Seconds=Seconds:
+        ///Main.L_Seed=Seed:
+        ///Main.L_Seek=Seek:
+        ///Main.RB_TimeCurrent=Current Time
+        ///Main.RB_TimeSpecific=Specific Ticks
+        ///Main.Tab_Adjacent=Adjacent
+        ///Main.Tab_Ball=Ball
+        ///Main.Tab_Bonus=Bonus
+        ///Main.Tab_Regular=Regular
+        ///.
+        /// </summary>
+        internal static string lang_en {
+            get {
+                return ResourceManager.GetString("lang_en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Main=ItemPrinterDeGacha
+        ///Main.B_AddOne=+1
+        ///Main.B_MinusOne=-1
+        ///Main.B_Search=Search
+        ///Main.CHK_PM2=Successful +/- 2
+        ///Main.GB_Time=Time
+        ///Main.L_0=0
+        ///Main.L_Item=Item:
+        ///Main.L_Jobs=Jobs:
+        ///Main.L_Max=Max Seconds:
+        ///Main.L_Min=Min Seconds:
+        ///Main.L_Mode=Mode:
+        ///Main.L_N1=-1
+        ///Main.L_P1=+1
+        ///Main.L_Seconds=Seconds:
+        ///Main.L_Seed=Seed:
+        ///Main.L_Seek=Seek:
+        ///Main.RB_TimeCurrent=Current Time
+        ///Main.RB_TimeSpecific=Specific Ticks
+        ///Main.Tab_Adjacent=Adjacent
+        ///Main.Tab_Ball=Ball
+        ///Main.Tab_Bonus=Bonus
+        ///Main.Tab_Regular=Regular [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string lang_es {
+            get {
+                return ResourceManager.GetString("lang_es", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Main=ItemPrinterDeGacha
+        ///Main.B_AddOne=+1
+        ///Main.B_MinusOne=-1
+        ///Main.B_Search=Search
+        ///Main.CHK_PM2=Successful +/- 2
+        ///Main.GB_Time=Time
+        ///Main.L_0=0
+        ///Main.L_Item=Item:
+        ///Main.L_Jobs=Jobs:
+        ///Main.L_Max=Max Seconds:
+        ///Main.L_Min=Min Seconds:
+        ///Main.L_Mode=Mode:
+        ///Main.L_N1=-1
+        ///Main.L_P1=+1
+        ///Main.L_Seconds=Seconds:
+        ///Main.L_Seed=Seed:
+        ///Main.L_Seek=Seek:
+        ///Main.RB_TimeCurrent=Current Time
+        ///Main.RB_TimeSpecific=Specific Ticks
+        ///Main.Tab_Adjacent=Adjacent
+        ///Main.Tab_Ball=Ball
+        ///Main.Tab_Bonus=Bonus
+        ///Main.Tab_Regular=Regular [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string lang_fr {
+            get {
+                return ResourceManager.GetString("lang_fr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Main=ItemPrinterDeGacha
+        ///Main.B_AddOne=+1
+        ///Main.B_MinusOne=-1
+        ///Main.B_Search=Search
+        ///Main.CHK_PM2=Successful +/- 2
+        ///Main.GB_Time=Time
+        ///Main.L_0=0
+        ///Main.L_Item=Item:
+        ///Main.L_Jobs=Jobs:
+        ///Main.L_Max=Max Seconds:
+        ///Main.L_Min=Min Seconds:
+        ///Main.L_Mode=Mode:
+        ///Main.L_N1=-1
+        ///Main.L_P1=+1
+        ///Main.L_Seconds=Seconds:
+        ///Main.L_Seed=Seed:
+        ///Main.L_Seek=Seek:
+        ///Main.RB_TimeCurrent=Current Time
+        ///Main.RB_TimeSpecific=Specific Ticks
+        ///Main.Tab_Adjacent=Adjacent
+        ///Main.Tab_Ball=Ball
+        ///Main.Tab_Bonus=Bonus
+        ///Main.Tab_Regular=Regular [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string lang_it {
+            get {
+                return ResourceManager.GetString("lang_it", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Main=ItemPrinterDeGacha
+        ///Main.B_AddOne=+1
+        ///Main.B_MinusOne=-1
+        ///Main.B_Search=Search
+        ///Main.CHK_PM2=Successful +/- 2
+        ///Main.GB_Time=Time
+        ///Main.L_0=0
+        ///Main.L_Item=Item:
+        ///Main.L_Jobs=Jobs:
+        ///Main.L_Max=Max Seconds:
+        ///Main.L_Min=Min Seconds:
+        ///Main.L_Mode=Mode:
+        ///Main.L_N1=-1
+        ///Main.L_P1=+1
+        ///Main.L_Seconds=Seconds:
+        ///Main.L_Seed=Seed:
+        ///Main.L_Seek=Seek:
+        ///Main.RB_TimeCurrent=Current Time
+        ///Main.RB_TimeSpecific=Specific Ticks
+        ///Main.Tab_Adjacent=Adjacent
+        ///Main.Tab_Ball=Ball
+        ///Main.Tab_Bonus=Bonus
+        ///Main.Tab_Regular=Regular [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string lang_ja {
+            get {
+                return ResourceManager.GetString("lang_ja", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Main=ItemPrinterDeGacha
+        ///Main.B_AddOne=+1
+        ///Main.B_MinusOne=-1
+        ///Main.B_Search=Search
+        ///Main.CHK_PM2=Successful +/- 2
+        ///Main.GB_Time=Time
+        ///Main.L_0=0
+        ///Main.L_Item=Item:
+        ///Main.L_Jobs=Jobs:
+        ///Main.L_Max=Max Seconds:
+        ///Main.L_Min=Min Seconds:
+        ///Main.L_Mode=Mode:
+        ///Main.L_N1=-1
+        ///Main.L_P1=+1
+        ///Main.L_Seconds=Seconds:
+        ///Main.L_Seed=Seed:
+        ///Main.L_Seek=Seek:
+        ///Main.RB_TimeCurrent=Current Time
+        ///Main.RB_TimeSpecific=Specific Ticks
+        ///Main.Tab_Adjacent=Adjacent
+        ///Main.Tab_Ball=Ball
+        ///Main.Tab_Bonus=Bonus
+        ///Main.Tab_Regular=Regular [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string lang_ko {
+            get {
+                return ResourceManager.GetString("lang_ko", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Main=ItemPrinterDeGacha
+        ///Main.B_AddOne=+1
+        ///Main.B_MinusOne=-1
+        ///Main.B_Search=Search
+        ///Main.CHK_PM2=Successful +/- 2
+        ///Main.GB_Time=Time
+        ///Main.L_0=0
+        ///Main.L_Item=Item:
+        ///Main.L_Jobs=Jobs:
+        ///Main.L_Max=Max Seconds:
+        ///Main.L_Min=Min Seconds:
+        ///Main.L_Mode=Mode:
+        ///Main.L_N1=-1
+        ///Main.L_P1=+1
+        ///Main.L_Seconds=Seconds:
+        ///Main.L_Seed=Seed:
+        ///Main.L_Seek=Seek:
+        ///Main.RB_TimeCurrent=Current Time
+        ///Main.RB_TimeSpecific=Specific Ticks
+        ///Main.Tab_Adjacent=Adjacent
+        ///Main.Tab_Ball=Ball
+        ///Main.Tab_Bonus=Bonus
+        ///Main.Tab_Regular=Regular [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string lang_zh {
+            get {
+                return ResourceManager.GetString("lang_zh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Main=ItemPrinterDeGacha
+        ///Main.B_AddOne=+1
+        ///Main.B_MinusOne=-1
+        ///Main.B_Search=Search
+        ///Main.CHK_PM2=Successful +/- 2
+        ///Main.GB_Time=Time
+        ///Main.L_0=0
+        ///Main.L_Item=Item:
+        ///Main.L_Jobs=Jobs:
+        ///Main.L_Max=Max Seconds:
+        ///Main.L_Min=Min Seconds:
+        ///Main.L_Mode=Mode:
+        ///Main.L_N1=-1
+        ///Main.L_P1=+1
+        ///Main.L_Seconds=Seconds:
+        ///Main.L_Seed=Seed:
+        ///Main.L_Seek=Seek:
+        ///Main.RB_TimeCurrent=Current Time
+        ///Main.RB_TimeSpecific=Specific Ticks
+        ///Main.Tab_Adjacent=Adjacent
+        ///Main.Tab_Ball=Ball
+        ///Main.Tab_Bonus=Bonus
+        ///Main.Tab_Regular=Regular [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string lang_zh2 {
+            get {
+                return ResourceManager.GetString("lang_zh2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
+        ///  &quot;ErrorMinMax&quot;: &quot;Min must be less than or equal to Max.&quot;,
+        ///  &quot;ErrorNoItem&quot;: &quot;No item specified&quot;,
+        ///  &quot;ErrorInvalidSearchCriteria&quot;: &quot;Invalid search criteria.&quot;,
+        ///  &quot;F0_Count&quot;: &quot;Count: {0}&quot;,
+        ///  &quot;F1_Time&quot;: &quot;Time: {0}&quot;,
+        ///  &quot;F1_Seed&quot;: &quot;Seed: {0}&quot;,
+        ///  &quot;F2_CountItem&quot;: &quot;x{0} {1}&quot;,
+        ///  &quot;F3_ModeAtTimeSeed&quot;: &quot;{0} @ {1} -- {2}&quot;
+        ///}.
+        /// </summary>
+        internal static string message_de {
+            get {
+                return ResourceManager.GetString("message_de", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
+        ///  &quot;ErrorMinMax&quot;: &quot;Min must be less than or equal to Max.&quot;,
+        ///  &quot;ErrorNoItem&quot;: &quot;No item specified&quot;,
+        ///  &quot;ErrorInvalidSearchCriteria&quot;: &quot;Invalid search criteria.&quot;,
+        ///  &quot;F1_Count&quot;: &quot;CountX: {0}&quot;,
+        ///  &quot;F1_Time&quot;: &quot;Time: {0}&quot;,
+        ///  &quot;F1_Seed&quot;: &quot;Seed: {0}&quot;,
+        ///  &quot;F2_CountItem&quot;: &quot;x{0} {1}&quot;,
+        ///  &quot;F3_ModeAtTimeSeed&quot;: &quot;{0} @ {1} -- {2}&quot;
+        ///}.
+        /// </summary>
+        internal static string message_en {
+            get {
+                return ResourceManager.GetString("message_en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
+        ///  &quot;ErrorMinMax&quot;: &quot;Min must be less than or equal to Max.&quot;,
+        ///  &quot;ErrorNoItem&quot;: &quot;No item specified&quot;,
+        ///  &quot;ErrorInvalidSearchCriteria&quot;: &quot;Invalid search criteria.&quot;,
+        ///  &quot;F0_Count&quot;: &quot;Count: {0}&quot;,
+        ///  &quot;F1_Time&quot;: &quot;Time: {0}&quot;,
+        ///  &quot;F1_Seed&quot;: &quot;Seed: {0}&quot;,
+        ///  &quot;F2_CountItem&quot;: &quot;x{0} {1}&quot;,
+        ///  &quot;F3_ModeAtTimeSeed&quot;: &quot;{0} @ {1} -- {2}&quot;
+        ///}.
+        /// </summary>
+        internal static string message_es {
+            get {
+                return ResourceManager.GetString("message_es", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
+        ///  &quot;ErrorMinMax&quot;: &quot;Min must be less than or equal to Max.&quot;,
+        ///  &quot;ErrorNoItem&quot;: &quot;No item specified&quot;,
+        ///  &quot;ErrorInvalidSearchCriteria&quot;: &quot;Invalid search criteria.&quot;,
+        ///  &quot;F0_Count&quot;: &quot;Count: {0}&quot;,
+        ///  &quot;F1_Time&quot;: &quot;Time: {0}&quot;,
+        ///  &quot;F1_Seed&quot;: &quot;Seed: {0}&quot;,
+        ///  &quot;F2_CountItem&quot;: &quot;x{0} {1}&quot;,
+        ///  &quot;F3_ModeAtTimeSeed&quot;: &quot;{0} @ {1} -- {2}&quot;
+        ///}.
+        /// </summary>
+        internal static string message_fr {
+            get {
+                return ResourceManager.GetString("message_fr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
+        ///  &quot;ErrorMinMax&quot;: &quot;Min must be less than or equal to Max.&quot;,
+        ///  &quot;ErrorNoItem&quot;: &quot;No item specified&quot;,
+        ///  &quot;ErrorInvalidSearchCriteria&quot;: &quot;Invalid search criteria.&quot;,
+        ///  &quot;F0_Count&quot;: &quot;Count: {0}&quot;,
+        ///  &quot;F1_Time&quot;: &quot;Time: {0}&quot;,
+        ///  &quot;F1_Seed&quot;: &quot;Seed: {0}&quot;,
+        ///  &quot;F2_CountItem&quot;: &quot;x{0} {1}&quot;,
+        ///  &quot;F3_ModeAtTimeSeed&quot;: &quot;{0} @ {1} -- {2}&quot;
+        ///}.
+        /// </summary>
+        internal static string message_it {
+            get {
+                return ResourceManager.GetString("message_it", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
+        ///  &quot;ErrorMinMax&quot;: &quot;Min must be less than or equal to Max.&quot;,
+        ///  &quot;ErrorNoItem&quot;: &quot;No item specified&quot;,
+        ///  &quot;ErrorInvalidSearchCriteria&quot;: &quot;Invalid search criteria.&quot;,
+        ///  &quot;F0_Count&quot;: &quot;Count: {0}&quot;,
+        ///  &quot;F1_Time&quot;: &quot;Time: {0}&quot;,
+        ///  &quot;F1_Seed&quot;: &quot;Seed: {0}&quot;,
+        ///  &quot;F2_CountItem&quot;: &quot;x{0} {1}&quot;,
+        ///  &quot;F3_ModeAtTimeSeed&quot;: &quot;{0} @ {1} -- {2}&quot;
+        ///}.
+        /// </summary>
+        internal static string message_ja {
+            get {
+                return ResourceManager.GetString("message_ja", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
+        ///  &quot;ErrorMinMax&quot;: &quot;Min must be less than or equal to Max.&quot;,
+        ///  &quot;ErrorNoItem&quot;: &quot;No item specified&quot;,
+        ///  &quot;ErrorInvalidSearchCriteria&quot;: &quot;Invalid search criteria.&quot;,
+        ///  &quot;F0_Count&quot;: &quot;Count: {0}&quot;,
+        ///  &quot;F1_Time&quot;: &quot;Time: {0}&quot;,
+        ///  &quot;F1_Seed&quot;: &quot;Seed: {0}&quot;,
+        ///  &quot;F2_CountItem&quot;: &quot;x{0} {1}&quot;,
+        ///  &quot;F3_ModeAtTimeSeed&quot;: &quot;{0} @ {1} -- {2}&quot;
+        ///}.
+        /// </summary>
+        internal static string message_ko {
+            get {
+                return ResourceManager.GetString("message_ko", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
+        ///  &quot;ErrorMinMax&quot;: &quot;Min must be less than or equal to Max.&quot;,
+        ///  &quot;ErrorNoItem&quot;: &quot;No item specified&quot;,
+        ///  &quot;ErrorInvalidSearchCriteria&quot;: &quot;Invalid search criteria.&quot;,
+        ///  &quot;F0_Count&quot;: &quot;Count: {0}&quot;,
+        ///  &quot;F1_Time&quot;: &quot;Time: {0}&quot;,
+        ///  &quot;F1_Seed&quot;: &quot;Seed: {0}&quot;,
+        ///  &quot;F2_CountItem&quot;: &quot;x{0} {1}&quot;,
+        ///  &quot;F3_ModeAtTimeSeed&quot;: &quot;{0} @ {1} -- {2}&quot;
+        ///}.
+        /// </summary>
+        internal static string message_zh {
+            get {
+                return ResourceManager.GetString("message_zh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
+        ///  &quot;ErrorMinMax&quot;: &quot;Min must be less than or equal to Max.&quot;,
+        ///  &quot;ErrorNoItem&quot;: &quot;No item specified&quot;,
+        ///  &quot;ErrorInvalidSearchCriteria&quot;: &quot;Invalid search criteria.&quot;,
+        ///  &quot;F0_Count&quot;: &quot;Count: {0}&quot;,
+        ///  &quot;F1_Time&quot;: &quot;Time: {0}&quot;,
+        ///  &quot;F1_Seed&quot;: &quot;Seed: {0}&quot;,
+        ///  &quot;F2_CountItem&quot;: &quot;x{0} {1}&quot;,
+        ///  &quot;F3_ModeAtTimeSeed&quot;: &quot;{0} @ {1} -- {2}&quot;
+        ///}.
+        /// </summary>
+        internal static string message_zh2 {
+            get {
+                return ResourceManager.GetString("message_zh2", resourceCulture);
+            }
+        }
     }
 }

@@ -1,5 +1,3 @@
-using System.Text.Json;
-
 namespace ItemPrinterDeGacha.WinForms;
 
 public sealed partial class Main : Form
@@ -7,10 +5,16 @@ public sealed partial class Main : Form
     public Main()
     {
         InitializeComponent();
+        this.TranslateInterface(Program.Settings.Language);
         Hide();
         BringToFront();
         System.Media.SystemSounds.Asterisk.Play();
         tabControl1.SelectedIndex = Program.Settings.CurrentTab;
+
+#if DEBUG
+        if (ModifierKeys == Keys.Shift)
+            DevUtil.UpdateAll(); // Translations
+#endif
     }
 
     private void ChangeSelectedTab(object sender, EventArgs e)

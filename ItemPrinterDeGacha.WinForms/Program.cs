@@ -3,17 +3,11 @@ using ItemPrinterDeGacha.Core;
 
 namespace ItemPrinterDeGacha.WinForms;
 
-public sealed class ProgramSettings
-{
-    public string Language { get; init; } = "en";
-    public string TimeFormat { get; init; } = "yyyy-MM-dd HH:mm:ss";
-    public int CurrentTab { get; set; }
-}
-
 internal static class Program
 {
-    public static ProgramSettings Settings = new();
+    public static ProgramSettings Settings { get; private set; } = new();
     public static string TimeFormat => Settings.TimeFormat;
+    public static Localization Localization => Localization.Instance;
 
     /// <summary>
     ///  The main entry point for the application.
@@ -22,18 +16,19 @@ internal static class Program
     private static void Main()
     {
         DetectSettings();
-        InitializePKHeX();
+        Initialize();
 
         ApplicationConfiguration.Initialize();
         Application.Run(new Main());
     }
 
-    private static void InitializePKHeX()
+    private static void Initialize()
     {
         var lang = "en";
         if (Settings.Language.Length is 2 or 3)
             lang = Settings.Language;
         GameStrings.Initialize(lang);
+        Localization.Initialize(lang);
     }
 
     private static readonly JsonSerializerOptions Options = new() { WriteIndented = true };

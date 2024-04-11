@@ -5,12 +5,14 @@ namespace ItemPrinterDeGacha.Core;
 /// </summary>
 public static class GameStrings
 {
+    public const string DefaultLanguage = "en";
+    public static string Language { get; private set; } = DefaultLanguage;
     private static string[] ItemNames = [];
 
     /// <summary>
     /// Initializes the item names from the embedded resources.
     /// </summary>
-    public static void Initialize(string language = "en") => ItemNames = GetNames(language);
+    public static void Initialize(string language = DefaultLanguage) => ItemNames = GetNames(Language = language);
 
     /// <summary>
     /// Get the name of an item by its index.

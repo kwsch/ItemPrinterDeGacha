@@ -24,7 +24,7 @@ public partial class ModeSearch : UserControl
         var max = (uint)NUD_Max.Value;
         if (min > max)
         {
-            RTB_Result.Text = "Min must be less than or equal to Max.";
+            RTB_Result.Text = Program.Localization.ErrorMinMax;
             return;
         }
 
@@ -60,9 +60,9 @@ public partial class ModeSearch : UserControl
 
                 var dateTime = TimeUtil.GetDateTime(check);
                 var time = dateTime.ToString(Program.TimeFormat);
-                var result = $"{mode} @ {time} -- {check}";
-                    result += $" -- with x{first.Count} {GameStrings.GetItemName(first.ItemId)}!";
-                RTB_Result.Text = result;
+                RTB_Result.Text =
+                    string.Format(Program.Localization.F3_ModeAtTimeSeed, mode, time, check) + Environment.NewLine +
+                    ItemUtil.GetResultString(tmp);
                 return;
             }
             ticks += 60;

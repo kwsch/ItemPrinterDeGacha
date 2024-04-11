@@ -94,7 +94,6 @@ namespace ItemPrinterDeGacha.WinForms.Controls
             // 
             // B_Search
             // 
-            B_Search.BackColor = SystemColors.ActiveCaption;
             B_Search.Location = new Point(499, 8);
             B_Search.Name = "B_Search";
             B_Search.Size = new Size(132, 45);
@@ -106,7 +105,6 @@ namespace ItemPrinterDeGacha.WinForms.Controls
             // RTB_Result
             // 
             RTB_Result.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            RTB_Result.BackColor = SystemColors.Control;
             RTB_Result.Location = new Point(0, 95);
             RTB_Result.Name = "RTB_Result";
             RTB_Result.ReadOnly = true;
@@ -174,7 +172,7 @@ namespace ItemPrinterDeGacha.WinForms.Controls
             // 
             // L_Jobs
             // 
-            L_Jobs.Location = new Point(121, 66);
+            L_Jobs.Location = new Point(121, 65);
             L_Jobs.Name = "L_Jobs";
             L_Jobs.Size = new Size(71, 24);
             L_Jobs.TabIndex = 38;

@@ -72,6 +72,7 @@ namespace ItemPrinterDeGacha.WinForms
             // 
             // modeSearch1
             // 
+            modeSearch1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             modeSearch1.Dock = DockStyle.Fill;
             modeSearch1.Location = new Point(0, 0);
             modeSearch1.Name = "modeSearch1";
@@ -90,6 +91,7 @@ namespace ItemPrinterDeGacha.WinForms
             // 
             // regularSearch1
             // 
+            regularSearch1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             regularSearch1.Dock = DockStyle.Fill;
             regularSearch1.Location = new Point(0, 0);
             regularSearch1.Name = "regularSearch1";
@@ -108,6 +110,7 @@ namespace ItemPrinterDeGacha.WinForms
             // 
             // ballSearch1
             // 
+            ballSearch1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             ballSearch1.Dock = DockStyle.Fill;
             ballSearch1.Location = new Point(0, 0);
             ballSearch1.Name = "ballSearch1";
@@ -141,7 +144,6 @@ namespace ItemPrinterDeGacha.WinForms
             Controls.Add(tabControl1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
-            MinimizeBox = false;
             Name = "Main";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ItemPrinterDeGacha";

@@ -6,9 +6,10 @@ public sealed record ComboItem(string Text, int Value) : IComparable<ComboItem>
 {
     public static ComboItem[] GetList(ReadOnlySpan<ushort> items)
     {
-        var list = new ComboItem[items.Length];
+        var list = new ComboItem[items.Length + 1];
         for (int i = 0; i < items.Length; i++)
             list[i] = new ComboItem(GameStrings.GetItemName(items[i]), items[i]);
+        list[^1] = new ComboItem(GameStrings.GetItemName(0), 0);
         Array.Sort(list);
         return list;
     }

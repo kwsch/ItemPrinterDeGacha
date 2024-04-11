@@ -1,0 +1,10 @@
+{
+  "ErrorMinMax": "Min must be less than or equal to Max.",
+  "ErrorNoItem": "No item specified",
+  "ErrorInvalidSearchCriteria": "Invalid search criteria.",
+  "F1_Count": "Count: {0}",
+  "F1_Time": "Time: {0}",
+  "F1_Seed": "Seed: {0}",
+  "F2_CountItem": "x{0} {1}",
+  "F3_ModeAtTimeSeed": "{0} @ {1} -- {2}"
+}
