@@ -18,7 +18,7 @@ public partial class ItemResultGridView : UserControl
         return finalMode;
     }
 
-    private void Populate(ReadOnlySpan<Item> itemSpan)
+    public void Populate(ReadOnlySpan<Item> itemSpan)
     {
         var rows = DGV_View.Rows;
         rows.Clear();

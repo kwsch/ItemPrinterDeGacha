@@ -138,9 +138,17 @@ public partial class BallSearch : UserControl
         Populate(result, items);
     }
 
-    private void Populate(ulong result, Span<Item> items) => Populate(ItemUtil.GetTextResult(result, items));
+    private void Populate(ulong result, Span<Item> items)
+    {
+        DGV_View.Populate(items);
+        Populate(ItemUtil.GetTextResult(result, items));
+    }
 
-    private void Populate(string result) => RTB_Result.Text = result;
+    private void Populate(string result)
+    {
+        RTB_Result.Text = result;
+        System.Media.SystemSounds.Beep.Play();
+    }
 
     private void CB_Seek_SelectedIndexChanged(object sender, EventArgs e)
     {

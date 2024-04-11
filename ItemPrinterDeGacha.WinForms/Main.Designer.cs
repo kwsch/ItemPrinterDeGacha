@@ -54,7 +54,9 @@ namespace ItemPrinterDeGacha.WinForms
             tabControl1.Dock = DockStyle.Fill;
             tabControl1.ItemSize = new Size(128, 32);
             tabControl1.Location = new Point(0, 0);
+            tabControl1.Margin = new Padding(0);
             tabControl1.Name = "tabControl1";
+            tabControl1.Padding = new Point(0, 0);
             tabControl1.SelectedIndex = 0;
             tabControl1.Size = new Size(723, 427);
             tabControl1.SizeMode = TabSizeMode.Fixed;
@@ -76,6 +78,7 @@ namespace ItemPrinterDeGacha.WinForms
             modeSearch1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             modeSearch1.Dock = DockStyle.Fill;
             modeSearch1.Location = new Point(0, 0);
+            modeSearch1.Margin = new Padding(0);
             modeSearch1.Name = "modeSearch1";
             modeSearch1.Size = new Size(715, 387);
             modeSearch1.TabIndex = 0;
@@ -95,6 +98,7 @@ namespace ItemPrinterDeGacha.WinForms
             regularSearch1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             regularSearch1.Dock = DockStyle.Fill;
             regularSearch1.Location = new Point(0, 0);
+            regularSearch1.Margin = new Padding(0);
             regularSearch1.Name = "regularSearch1";
             regularSearch1.Size = new Size(715, 387);
             regularSearch1.TabIndex = 0;
@@ -134,6 +138,7 @@ namespace ItemPrinterDeGacha.WinForms
             adjacentViewer1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             adjacentViewer1.Dock = DockStyle.Fill;
             adjacentViewer1.Location = new Point(3, 3);
+            adjacentViewer1.Margin = new Padding(0);
             adjacentViewer1.Name = "adjacentViewer1";
             adjacentViewer1.Size = new Size(709, 381);
             adjacentViewer1.TabIndex = 0;

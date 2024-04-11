@@ -58,15 +58,22 @@ public partial class ModeSearch : UserControl
                 if (CHK_PM2.Checked && !IsPassAdjacent(check, tmp, mode))
                     continue;
 
-                var dateTime = TimeUtil.GetDateTime(check);
-                var time = dateTime.ToString(Program.TimeFormat);
-                RTB_Result.Text =
-                    string.Format(Program.Localization.F3_ModeAtTimeSeed, mode, time, check) + Environment.NewLine +
-                    ItemUtil.GetResultString(tmp);
+                SetResult(check, mode, tmp);
                 return;
             }
             ticks += 60;
         }
+    }
+
+    private void SetResult(ulong seed, PrintMode mode, Span<Item> items)
+    {
+        var dateTime = TimeUtil.GetDateTime(seed);
+        var time = dateTime.ToString(Program.TimeFormat);
+        RTB_Result.Text =
+            string.Format(Program.Localization.F3_ModeAtTimeSeed, mode, time, seed) + Environment.NewLine +
+            ItemUtil.GetResultString(items);
+        DGV_View.Populate(items);
+        System.Media.SystemSounds.Beep.Play();
     }
 
     private static bool IsPassAdjacent(ulong check, Span<Item> tmp, PrintMode mode)

@@ -46,6 +46,7 @@ namespace ItemPrinterDeGacha.WinForms.Controls
             // ADJ_N1
             // 
             ADJ_N1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            ADJ_N1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             ADJ_N1.Location = new Point(1, 83);
             ADJ_N1.Name = "ADJ_N1";
             ADJ_N1.Size = new Size(235, 250);
@@ -54,6 +55,7 @@ namespace ItemPrinterDeGacha.WinForms.Controls
             // ADJ_0
             // 
             ADJ_0.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            ADJ_0.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             ADJ_0.Location = new Point(237, 83);
             ADJ_0.Name = "ADJ_0";
             ADJ_0.Size = new Size(235, 250);
@@ -62,6 +64,7 @@ namespace ItemPrinterDeGacha.WinForms.Controls
             // ADJ_P1
             // 
             ADJ_P1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            ADJ_P1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             ADJ_P1.Location = new Point(473, 83);
             ADJ_P1.Name = "ADJ_P1";
             ADJ_P1.Size = new Size(235, 250);
@@ -182,6 +185,7 @@ namespace ItemPrinterDeGacha.WinForms.Controls
             Controls.Add(ADJ_P1);
             Controls.Add(ADJ_0);
             Controls.Add(ADJ_N1);
+            Margin = new Padding(0);
             Name = "AdjacentViewer";
             Size = new Size(709, 334);
             ResumeLayout(false);
