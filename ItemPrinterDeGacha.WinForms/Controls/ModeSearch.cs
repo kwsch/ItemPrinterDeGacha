@@ -70,8 +70,9 @@ public partial class ModeSearch : UserControl
     {
         var dateTime = TimeUtil.GetDateTime(seed);
         var time = dateTime.ToString(Program.TimeFormat);
+        var modeL10n = Program.Localization.LocalizeEnum<PrintMode>();
         RTB_Result.Text =
-            string.Format(Program.Localization.F3_ModeAtTimeSeed, mode, time, seed) + Environment.NewLine +
+            string.Format(Program.Localization.F3_ModeAtTimeSeed, modeL10n[(int)mode], time, seed) + Environment.NewLine +
             ItemUtil.GetResultString(items);
         DGV_View.Populate(items);
         System.Media.SystemSounds.Beep.Play();
