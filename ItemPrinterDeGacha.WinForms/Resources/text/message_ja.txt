@@ -1,18 +1,18 @@
-﻿{
+{
   "ErrorMinMax": "上限値は下限値を下回ってはいけません",
   "ErrorNoItem": "アイテムが指定されていません",
   "ErrorInvalidSearchCriteria": "検索条件が不正です",
-  "F1_Count": "Count: {0}",
+  "F1_Count": "個数: {0}",
   "F1_Time": "時刻: {0}",
   "F1_Seed": "Seed: {0}",
   "F2_CountItem": "x{0} {1}",
-  "F3_ModeAtTimeSeed": "{0} @ {1} -- {2}",
+  "F3_ModeAtTimeSeed": "時刻: {1}\nSeed: {2}\nチャンス: {0}",
   "Others": {
-    "PrintMode.Regular": "Regular",
-    "PrintMode.ItemBonus": "ItemBonus",
-    "PrintMode.BallBonus": "BallBonus",
-    "SearchModeRegular.MaxSpecificItem": "MaxSpecificItem",
-    "SearchModeBall.MaxSpecificItem": "MaxSpecificItem",
-    "SearchModeBall.MaxValuables": "MaxValuables"
+    "PrintMode.Regular": "（なし）",
+    "PrintMode.ItemBonus": "道具2倍チャンス",
+    "PrintMode.BallBonus": "レアボールチャンス",
+    "SearchModeRegular.MaxSpecificItem": "特定の道具を狙う",
+    "SearchModeBall.MaxSpecificItem": "特定のボールを狙う",
+    "SearchModeBall.MaxValuables": "レアボールを狙う"
   }
 }
