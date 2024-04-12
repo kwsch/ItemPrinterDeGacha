@@ -85,7 +85,7 @@ public static class SeedSearch
             foreach (var item in items)
             {
                 if (find.Contains(item.ItemId))
-                    c++;
+                    c += item.Count;
             }
 
             if (c <= count)
