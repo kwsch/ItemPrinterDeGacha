@@ -8,11 +8,11 @@
   "F2_CountItem": "x{0} {1}",
   "F3_ModeAtTimeSeed": "{0} @ {1} -- {2}",
   "Others": {
-    "PrintMode.Regular": "Regular",
-    "PrintMode.ItemBonus": "ItemBonus",
-    "PrintMode.BallBonus": "BallBonus",
-    "SearchModeRegular.MaxSpecificItem": "MaxSpecificItem",
-    "SearchModeBall.MaxSpecificItem": "MaxSpecificItem",
-    "SearchModeBall.MaxValuables": "MaxValuables"
+    "PrintMode.Regular": "正常",
+    "PrintMode.ItemBonus": "道具２倍",
+    "PrintMode.BallBonus": "稀有精灵球",
+    "SearchModeRegular.MaxSpecificItem": "最多指定道具",
+    "SearchModeBall.MaxSpecificItem": "最多指定道具",
+    "SearchModeBall.MaxValuables": "最多稀有奖励"
   }
 }
