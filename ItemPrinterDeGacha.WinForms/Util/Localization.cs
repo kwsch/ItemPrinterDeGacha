@@ -63,6 +63,13 @@ public sealed class Localization
         return result;
     }
 
+    public string LocalizeEnum<T>(T value) where T : struct, Enum
+    {
+        var type = typeof(T);
+        var name = Enum.GetName(value) ?? $"{value}";
+        return Localize($"{type.Name}.{name}", name);
+    }
+
     public void CacheEnum<T>() where T : struct, Enum
     {
         var type = typeof(T);

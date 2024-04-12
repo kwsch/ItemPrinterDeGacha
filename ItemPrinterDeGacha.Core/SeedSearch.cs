@@ -2,8 +2,21 @@ using static ItemPrinterDeGacha.Core.PrintMode;
 
 namespace ItemPrinterDeGacha.Core;
 
+/// <summary>
+/// Search routines for finding seeds that match certain criteria.
+/// </summary>
 public static class SeedSearch
 {
+    /// <summary>
+    /// Searches for the next activation of a bonus mode.
+    /// </summary>
+    /// <param name="startTicks">Starting seed to search from.</param>
+    /// <param name="targetMode">Desired bonus mode to find.</param>
+    /// <param name="itemId">Optional item ID to search for.</param>
+    /// <returns>The seed that activates the bonus mode.</returns>
+    /// <remarks>
+    /// Iterates upwards from the starting seed until the desired bonus mode is found.
+    /// </remarks>
     public static ulong FindNextBonusMode(ulong startTicks, PrintMode targetMode, int itemId = 0)
     {
         if (targetMode is not (ItemBonus or BallBonus))

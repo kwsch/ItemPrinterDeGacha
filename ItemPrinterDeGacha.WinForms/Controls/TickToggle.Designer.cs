@@ -29,15 +29,16 @@
         private void InitializeComponent()
         {
             GB_Time = new GroupBox();
-            TB_Time = new TextBox();
+            NUD_Time = new NumericUpDown();
             RB_TimeSpecific = new RadioButton();
             RB_TimeCurrent = new RadioButton();
             GB_Time.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)NUD_Time).BeginInit();
             SuspendLayout();
             // 
             // GB_Time
             // 
-            GB_Time.Controls.Add(TB_Time);
+            GB_Time.Controls.Add(NUD_Time);
             GB_Time.Controls.Add(RB_TimeSpecific);
             GB_Time.Controls.Add(RB_TimeCurrent);
             GB_Time.Dock = DockStyle.Fill;
@@ -48,13 +49,13 @@
             GB_Time.TabStop = false;
             GB_Time.Text = "Time";
             // 
-            // TB_Time
+            // NUD_Time
             // 
-            TB_Time.Location = new Point(6, 54);
-            TB_Time.Name = "TB_Time";
-            TB_Time.ReadOnly = true;
-            TB_Time.Size = new Size(100, 23);
-            TB_Time.TabIndex = 2;
+            NUD_Time.Enabled = false;
+            NUD_Time.Location = new Point(6, 54);
+            NUD_Time.Name = "NUD_Time";
+            NUD_Time.Size = new Size(100, 23);
+            NUD_Time.TabIndex = 2;
             // 
             // RB_TimeSpecific
             // 
@@ -90,14 +91,15 @@
             Size = new Size(112, 83);
             GB_Time.ResumeLayout(false);
             GB_Time.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)NUD_Time).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private GroupBox GB_Time;
-        private TextBox TB_Time;
         private RadioButton RB_TimeSpecific;
         private RadioButton RB_TimeCurrent;
+        private NumericUpDown NUD_Time;
     }
 }

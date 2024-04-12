@@ -1,4 +1,5 @@
 using ItemPrinterDeGacha.Core;
+using System.ComponentModel.DataAnnotations;
 
 namespace ItemPrinterDeGacha.WinForms.Controls;
 
@@ -17,6 +18,8 @@ public partial class RegularSearch : UserControl
         CB_Item.InitializeBinding();
         CB_Item.DataSource = new BindingSource(items, null);
         CB_Item.SelectedValue = 53; // PP Max
+
+        UpdateIncrement();
     }
 
     private void B_Search_Click(object sender, EventArgs e)
@@ -51,6 +54,7 @@ public partial class RegularSearch : UserControl
             {
                 (ulong t, int c) = SeedSearch.MaxResultsAny(ticks, ticks + count, tmp, Mode, item);
                 Populate(t, tmp);
+                // Append the total sum of the specific item found.
                 RTB_Result.Text += Environment.NewLine + string.Format(Program.Localization.F1_Count, c);
             }
             return;
@@ -62,7 +66,7 @@ public partial class RegularSearch : UserControl
         {
             if (item == 0)
             {
-                Populate(Program.Localization.ErrorNoItem);
+                PopulateError(Program.Localization.ErrorNoItem);
                 return;
             }
 
@@ -87,31 +91,46 @@ public partial class RegularSearch : UserControl
                     result = check;
                 }
 
-                ticks += 60;
+                ticks += 60; // Next minute
             }
             while (ticks - seed < count);
             Populate(result, tmp.Length);
+            // Append the total sum of the specific item found.
+            RTB_Result.Text += Environment.NewLine + string.Format(Program.Localization.F1_Count, c);
             return;
         }
-        Populate(Program.Localization.ErrorInvalidSearchCriteria);
+        PopulateError(Program.Localization.ErrorInvalidSearchCriteria);
     }
 
-    private void Populate(ulong result, int count)
+    /// <summary>
+    /// Displays the result of the search in the user interface.
+    /// </summary>
+    /// <param name="result">Seed found.</param>
+    /// <param name="count">Items printed with that seed.</param>
+    private void Populate(ulong result, [Range(1, 10)] int count)
     {
         Span<Item> items = stackalloc Item[count];
         ItemPrinter.Print(result, items, Mode);
         Populate(result, items);
     }
 
-    private void Populate(ulong result, Span<Item> items)
+    /// <summary>
+    /// Displays the result of the search in the user interface.
+    /// </summary>
+    private void Populate(ulong result, [Length(1, 10)] Span<Item> items)
     {
         DGV_View.Populate(items);
-        Populate(ItemUtil.GetTextResult(result, items));
-    }
-
-    private void Populate(string result)
-    {
-        RTB_Result.Text = result;
+        RTB_Result.Text = ItemUtil.GetTextResult(result, items);
         System.Media.SystemSounds.Beep.Play();
     }
+
+    private void PopulateError(string error)
+    {
+        RTB_Result.Text = error;
+        System.Media.SystemSounds.Beep.Play();
+        DGV_View.Clear();
+    }
+
+    private void NUD_Seconds_ValueChanged(object sender, EventArgs e) => UpdateIncrement();
+    private void UpdateIncrement() => tickToggle1.UpdateIncrement(NUD_Seconds.Value);
 }

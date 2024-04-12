@@ -29,4 +29,6 @@ public partial class ItemResultGridView : UserControl
             rows.Add(item.Count, img, GameStrings.GetItemName(item.ItemId));
         }
     }
+
+    public void Clear() => DGV_View.Rows.Clear();
 }

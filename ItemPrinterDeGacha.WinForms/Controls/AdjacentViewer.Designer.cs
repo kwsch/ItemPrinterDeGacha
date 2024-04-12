@@ -39,8 +39,9 @@ namespace ItemPrinterDeGacha.WinForms.Controls
             CB_Mode = new ComboBox();
             L_Mode = new Label();
             L_Seed = new Label();
-            MTB_Seed = new MaskedTextBox();
             CB_Count = new ComboBox();
+            NUD_Seed = new NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)NUD_Seed).BeginInit();
             SuspendLayout();
             // 
             // ADJ_N1
@@ -147,16 +148,6 @@ namespace ItemPrinterDeGacha.WinForms.Controls
             L_Seed.Text = "Seed:";
             L_Seed.TextAlign = ContentAlignment.MiddleRight;
             // 
-            // MTB_Seed
-            // 
-            MTB_Seed.Font = new Font("Courier New", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            MTB_Seed.Location = new Point(315, 33);
-            MTB_Seed.Mask = "0000000000";
-            MTB_Seed.Name = "MTB_Seed";
-            MTB_Seed.Size = new Size(78, 21);
-            MTB_Seed.TabIndex = 3;
-            MTB_Seed.TextChanged += MTB_Seed_TextChanged;
-            // 
             // CB_Count
             // 
             CB_Count.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -167,12 +158,19 @@ namespace ItemPrinterDeGacha.WinForms.Controls
             CB_Count.Size = new Size(39, 23);
             CB_Count.TabIndex = 12;
             // 
+            // NUD_Seed
+            // 
+            NUD_Seed.Location = new Point(315, 32);
+            NUD_Seed.Name = "NUD_Seed";
+            NUD_Seed.Size = new Size(96, 23);
+            NUD_Seed.TabIndex = 13;
+            // 
             // AdjacentViewer
             // 
             AutoScaleMode = AutoScaleMode.Inherit;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            Controls.Add(NUD_Seed);
             Controls.Add(CB_Count);
-            Controls.Add(MTB_Seed);
             Controls.Add(L_Seed);
             Controls.Add(L_Mode);
             Controls.Add(CB_Mode);
@@ -187,8 +185,8 @@ namespace ItemPrinterDeGacha.WinForms.Controls
             Margin = new Padding(0);
             Name = "AdjacentViewer";
             Size = new Size(709, 334);
+            ((System.ComponentModel.ISupportInitialize)NUD_Seed).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -204,7 +202,7 @@ namespace ItemPrinterDeGacha.WinForms.Controls
         private ComboBox CB_Mode;
         private Label L_Mode;
         private Label L_Seed;
-        private MaskedTextBox MTB_Seed;
         private ComboBox CB_Count;
+        private NumericUpDown NUD_Seed;
     }
 }

@@ -74,6 +74,7 @@ namespace ItemPrinterDeGacha.WinForms.Controls
             NUD_Seconds.Size = new Size(80, 23);
             NUD_Seconds.TabIndex = 5;
             NUD_Seconds.Value = new decimal(new int[] { 1000000, 0, 0, 0 });
+            NUD_Seconds.ValueChanged += NUD_Seconds_ValueChanged;
             // 
             // CB_Seek
             // 

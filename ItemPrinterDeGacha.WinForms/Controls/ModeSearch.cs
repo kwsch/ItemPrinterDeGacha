@@ -42,6 +42,7 @@ public partial class ModeSearch : UserControl
         var currentSeconds = TimeUtil.GetDateTime(ticks).Second;
         ticks -= (ulong)currentSeconds;
         int jobs = int.Parse(CB_Count.Text);
+        bool checkAdjacentSeeds = CHK_PM2.Checked; // +/- 2 seconds [-2, +2] need to have same mode
         Span<Item> tmp = stackalloc Item[jobs];
         while (true)
         {
@@ -56,23 +57,26 @@ public partial class ModeSearch : UserControl
                 if (item != 0 && first.ItemId != item)
                     continue;
 
-                if (CHK_PM2.Checked && !IsPassAdjacent(check, tmp, mode))
+                if (checkAdjacentSeeds && !IsPassAdjacent(check, tmp, mode))
                     continue;
 
                 SetResult(check, mode, tmp);
                 return;
             }
-            ticks += 60;
+            ticks += 60; // Next minute
         }
     }
 
+    /// <summary>
+    /// Displays the result of the search in the user interface.
+    /// </summary>
     private void SetResult(ulong seed, PrintMode mode, Span<Item> items)
     {
         var dateTime = TimeUtil.GetDateTime(seed);
         var time = dateTime.ToString(Program.TimeFormat);
-        var modeL10n = Program.Localization.LocalizeEnum<PrintMode>();
+        var modeL10n = Program.Localization.LocalizeEnum(mode);
         RTB_Result.Text =
-            string.Format(Program.Localization.F3_ModeAtTimeSeed, modeL10n[(int)mode], time, seed) + Environment.NewLine +
+            string.Format(Program.Localization.F3_ModeAtTimeSeed, modeL10n, time, seed) + Environment.NewLine +
             ItemUtil.GetResultString(items);
         DGV_View.Populate(items);
         System.Media.SystemSounds.Beep.Play();
@@ -80,6 +84,9 @@ public partial class ModeSearch : UserControl
 
     private static bool IsPassAdjacent(ulong check, Span<Item> tmp, PrintMode mode)
     {
+        // Check for adjacent results to ensure the bonus mode is the same.
+        // +/- 2 seconds should be enough to cover even the most inconsistent user.
+        // They can then use the adjacent results to see how far off they were while still not wasting resources.
         for (int j = -2; j <= +2; j++)
         {
             var seed = check + unchecked((ulong)j);

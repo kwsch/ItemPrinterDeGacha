@@ -14,6 +14,19 @@ public static class ItemPrinter
     // Player has both bonus modes unlocked -- otherwise, the bonus mode check won't call rand().
     // Player has unlocked Stellar Tera Shards -- the rand max would be different (less).
 
+    // Rough summary of the item printer logic:
+    // Once the games load the table, they sort the rewards by ascending weight (lowest first).
+    // Then, the game determines the "total weight" by summing all weights.
+    // Stellar Tera Shards require a specific event flag (storyline progress) -- we assume it's unlocked.
+    // For each reward printed, the game will give a 2% chance to unlock a bonus mode on the next print set.
+    // When determining which item to award:
+    // Roll a random number between 0 and total weight.
+    // Find the item whose weight range contains the random number.
+    // - Iterate from Index 0 in the reward table;
+    // - Subtract the weight from the random number until it's 0 or negative.
+    // - The item at the current index is the one to award.
+    // To save time, the game precomputes a "jump table" to find the item index directly from the random number.
+
     // Max values for the random number generator.
     // Sum of all weights in the table + 1. Same for both modes, but listed separately for clarity.
     private const uint ItemRandMax = 10001;
@@ -21,7 +34,7 @@ public static class ItemPrinter
 
     // Reward tables for both modes.
     // Ball Table json is a different format, but it's manually adjusted (min/max counts are always 1 or 5).
-    // This allows for a single routine to handle both tables.
+    // This allows for a single Print routine to handle both tables.
     private static readonly LotteryItemValue[] ItemTable;
     private static readonly LotteryItemValue[] BallTable;
 
@@ -56,6 +69,9 @@ public static class ItemPrinter
     /// </summary>
     static ItemPrinter()
     {
+        // The games store the regular lottery table in a FlatBuffer format.
+        // These resources have been converted to JSON for easier parsing.
+        // Read the resource as byte[] from the dll and let the utf8 parser decode it from json.
         var resource = Properties.Resources.item_table_array;
         var text = new Utf8JsonReader(resource);
         var regular = JsonSerializer.Deserialize<LotteryRoot>(ref text)!.Table;
@@ -75,8 +91,15 @@ public static class ItemPrinter
         BallJump = GenerateJumpTable(BallTable, BallRandMax);
     }
 
+    /// <summary>
+    /// Generates a jump table for the lottery rand() results to a specific reward index.
+    /// </summary>
+    /// <param name="table">Reward table to generate the jump table for.</param>
+    /// <param name="maxRand">Maximum rand() result value from the RNG.</param>
     private static byte[] GenerateJumpTable(ReadOnlySpan<LotteryItemValue> table, [ConstantExpected] uint maxRand)
     {
+        // The jump table is a precomputed array to quickly find the item index from the rand() result.
+        // The game uses <= instead of <, resulting in the [0]th item having n+1 weight.
         var result = new byte[maxRand];
         uint index = maxRand - 1u;
         for (int i = table.Length - 1; i >= 0; i--)
@@ -90,8 +113,9 @@ public static class ItemPrinter
 
             // Debug Util
             item.MaxRoll = max;
-            item.MinRoll = i == 0 ? 0 : min;
+            item.MinRoll = min;
         }
+        table[0].MinRoll = 0; // Handle quirk where the first item has n+1 weight.
         return result;
     }
 
@@ -104,7 +128,8 @@ public static class ItemPrinter
     public static bool TableHasItem(PrintMode mode, ushort itemId)
     {
         var table = mode == BallBonus ? Balls : Items;
-        return table.Contains(itemId);
+        // Item IDs are sorted, so we can use a binary search for faster results.
+        return table.BinarySearch(itemId) >= 0;
     }
 
     /// <summary>
