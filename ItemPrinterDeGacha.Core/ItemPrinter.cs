@@ -179,13 +179,12 @@ public static class ItemPrinter
 
         // Print all items we've been requested to print.
         // If we're in ItemBonus mode, double the amount of items printed.
-        var checkBonus = false;
+        var returnMode = Regular;
         foreach (ref var item in result)
         {
             // Always check for next bonus mode, even if not possible.
             var roll = rand.NextInt(1000);
-            if (roll < 20)
-                checkBonus = true;
+            var setBonusMode = roll < 20;
 
             // Determine the item to print.
             var itemRoll = rand.NextInt(randMax); // total weights
@@ -200,12 +199,13 @@ public static class ItemPrinter
 
             // Store in the result buffer.
             item = new(param.ItemId, (ushort)count);
-        }
 
-        // Determine the next print mode.
-        var returnMode = Regular;
-        if (printMode == Regular && checkBonus) // Bonus modes always reset to Regular mode.
-            returnMode = (PrintMode)(1 + rand.NextInt(2)); // Assume the player has both modes unlocked.
+            // If we're lucky enough to get a bonus mode, pick one.
+            // Assume the player has both modes unlocked.
+            // If a bonus mode was previously set, don't recalculate.
+            if (printMode == Regular && setBonusMode && returnMode == Regular)
+                returnMode = (PrintMode)(1 + rand.NextInt(2));
+        }
 
         return returnMode;
     }
