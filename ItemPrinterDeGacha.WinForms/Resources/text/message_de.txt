@@ -1,18 +1,18 @@
-﻿{
-  "ErrorMinMax": "Min must be less than or equal to Max.",
-  "ErrorNoItem": "No item specified",
-  "ErrorInvalidSearchCriteria": "Invalid search criteria.",
-  "F1_Count": "Count: {0}",
-  "F1_Time": "Time: {0}",
+{
+  "ErrorMinMax": "Min. muss größer oder gleich Max. sein.",
+  "ErrorNoItem": "Kein Item ausgewählt.",
+  "ErrorInvalidSearchCriteria": "Ungültige Suchkriterien.",
+  "F1_Count": "Anzahl: {0}",
+  "F1_Time": "Zeit: {0}",
   "F1_Seed": "Seed: {0}",
   "F2_CountItem": "x{0} {1}",
   "F3_ModeAtTimeSeed": "{0} @ {1} -- {2}",
   "Others": {
-    "PrintMode.Regular": "Regular",
-    "PrintMode.ItemBonus": "ItemBonus",
-    "PrintMode.BallBonus": "BallBonus",
-    "SearchModeRegular.MaxSpecificItem": "MaxSpecificItem",
-    "SearchModeBall.MaxSpecificItem": "MaxSpecificItem",
-    "SearchModeBall.MaxValuables": "MaxValuables"
+    "PrintMode.Regular": "Standard",
+    "PrintMode.ItemBonus": "Doppel-Item-Bonus",
+    "PrintMode.BallBonus": "Ball-Tombola",
+    "SearchModeRegular.MaxSpecificItem": "Max. spez. Item",
+    "SearchModeBall.MaxSpecificItem": "Max. spez. Item",
+    "SearchModeBall.MaxValuables": "Max. seltenes"
   }
 }
