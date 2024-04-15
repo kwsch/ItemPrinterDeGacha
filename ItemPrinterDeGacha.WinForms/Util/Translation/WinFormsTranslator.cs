@@ -63,7 +63,20 @@ public static class WinFormsTranslator
 
     private static void TranslateControl(object c, TranslationContext context, ReadOnlySpan<char> formname)
     {
-        if (c is Control r)
+        if (c is DataGridView d)
+        {
+            // Also a control, but we need to translate the column headers.
+            // DataGridView does not have a "Text" property, so handle it before we check for Control.
+            var tag = $"{formname}.{d.Name}";
+            foreach (DataGridViewColumn x in d.Columns)
+            {
+                var current = x.HeaderText;
+                var updated = context.GetTranslatedText($"{tag}.{x.Name}", current);
+                if (!ReferenceEquals(x.HeaderText, updated))
+                    x.HeaderText = updated;
+            }
+        }
+        else if (c is Control r)
         {
             var current = r.Text;
             var updated = context.GetTranslatedText($"{formname}.{r.Name}", current);
@@ -72,6 +85,7 @@ public static class WinFormsTranslator
         }
         else if (c is ToolStripItem t)
         {
+            // Not a control, but we need to translate the text.
             var current = t.Text;
             var updated = context.GetTranslatedText($"{formname}.{t.Name}", current);
             if (!ReferenceEquals(current, updated))
@@ -117,6 +131,8 @@ public static class WinFormsTranslator
                         break; // undesirable to modify, ignore
 
                     if (!string.IsNullOrWhiteSpace(z.Text))
+                        yield return z;
+                    else if (z is DataGridView)
                         yield return z;
                     break;
             }

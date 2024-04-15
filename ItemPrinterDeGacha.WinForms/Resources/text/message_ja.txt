@@ -1,4 +1,4 @@
-{
+﻿{
   "ErrorMinMax": "上限値は下限値を下回ってはいけません",
   "ErrorNoItem": "アイテムが指定されていません",
   "ErrorInvalidSearchCriteria": "検索条件が不正です",

@@ -1,8 +1,11 @@
-Main=ItemPrinterDeGacha
+﻿Main=ItemPrinterDeGacha
 Main.B_AddOne=+1
 Main.B_MinusOne=-1
 Main.B_Search=検索
 Main.CHK_PM2=±2秒ずれても成功する
+Main.DGV_View.Count=Count
+Main.DGV_View.IMG=IMG
+Main.DGV_View.ItemName=Name
 Main.GB_Time=時刻
 Main.L_0=0
 Main.L_Item=アイテム:
