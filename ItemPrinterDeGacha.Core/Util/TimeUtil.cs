@@ -15,9 +15,9 @@ public static class TimeUtil
     /// Maximum seed value the Nintendo Switch can generate with.
     /// </summary>
     /// <remarks>
-    /// Nobody is really going to set their console to 2099 and let it overflow to wait, so this is essentially an arbitrary cap.
+    /// Nobody is really going to set their console to 2060 and let it overflow to wait, so this is essentially an arbitrary cap.
     /// </remarks>
-    public const uint MaxSeed = 4102444800 - 1; // 2100-01-01 00:00:00
+    public const uint MaxSeed = 2871763200 - 1; // 2061-01-01 00:00:00
 
     /// <summary>
     /// A seed is the number of seconds elapsed since 00:00:00 on January 1, 1970, console's displayed time.
