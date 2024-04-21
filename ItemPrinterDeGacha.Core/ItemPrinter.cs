@@ -25,11 +25,11 @@ public static class ItemPrinter
     // - Iterate from Index 0 in the reward table;
     // - Subtract the weight from the random number until it's 0 or negative.
     // - The item at the current index is the one to award.
-    // To save time, the game precomputes a "jump table" to find the item index directly from the random number.
+    // To save time, we precompute a "jump table" to find the item index directly from the random number.
 
     // Max values for the random number generator.
     // Sum of all weights in the table + 1. Same for both modes, but listed separately for clarity.
-    private const uint ItemRandMax = 10001;
+    private const uint ItemRandMax = 10001; // Stellar Tera Shards unlocked
     private const uint BallRandMax = 10001;
 
     // Reward tables for both modes.
